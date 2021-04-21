@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -10,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpForce = 10f;
     [SerializeField] private float wallJumpDuration = .5f;
     
+    [SerializeField] private Vector2 wallJumpDirection = Vector2.up + Vector2.right;
+     
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
     
@@ -99,12 +102,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_onGround)
         {
+            _onGround = false;
+            
             Jump(Vector2.up * jumpForce);
         }
         else if (_onWall)
         {
-            var oppositeDirection = _facingRight ? Vector2.left : Vector2.right;
-            Jump((Vector2.up + oppositeDirection) * wallJumpForce);
+            _onWall = false;
+            
+            var oppositeXDirection = _facingRight ? -1 : 1;
+            Jump(new Vector2(wallJumpDirection.x * oppositeXDirection, wallJumpDirection.y) * wallJumpForce);
             
             Flip();
             

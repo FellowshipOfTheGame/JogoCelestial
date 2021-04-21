@@ -190,6 +190,7 @@ MonoBehaviour:
   wallJumpLerp: 10
   wallJumpForce: 10
   wallJumpDuration: 0.5
+  wallJumpDirection: {x: 1, y: 1}
   groundCheck: {fileID: 2957496562226390986}
   wallCheck: {fileID: 6361013250143567771}
   collisionMask:

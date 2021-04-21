@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd1a9793945b084f8d290d77e5ce723, type: 3}
+  m_Name: Spike
+  m_EditorClassIdentifier: 
+  tilePrefab: {fileID: 4759260833505564026, guid: ab5cd43cb122f8d40896e23914a792a7, type: 3}
+  tileSprite: {fileID: 7180195895192826059, guid: 4c9ebb5b6f0929e40b2c1167732fd4c7, type: 3}
+  tileCollisionType: 0

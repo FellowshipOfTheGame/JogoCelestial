@@ -185,12 +185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114b506cad6ce46bd99873a10126c394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 12
   jumpForce: 15
-  wallJumpLerp: 10
-  wallJumpForce: 10
-  wallJumpDuration: 0.5
-  wallJumpDirection: {x: 1, y: 1}
+  wallJumpLerp: 7.5
+  wallJumpForce: 15
+  wallJumpDuration: 0.175
+  collisionRadius: 0.2
+  wallJumpDirection: {x: 0.8, y: 1}
   groundCheck: {fileID: 2957496562226390986}
   wallCheck: {fileID: 6361013250143567771}
   collisionMask:
@@ -241,7 +242,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: c70da062593aa40f0b04d89e66e10c97, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &8245959150087861581
 GameObject:

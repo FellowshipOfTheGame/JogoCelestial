@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpLerp = 10f;
     [SerializeField] private float wallJumpForce = 10f;
     [SerializeField] private float wallJumpDuration = .5f;
+    [SerializeField] float collisionRadius = .05f;
     
     [SerializeField] private Vector2 wallJumpDirection = Vector2.up + Vector2.right;
      
@@ -18,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private LayerMask collisionMask;
 
-    private const float CollisionRadius = .05f;
     private float _moveSpeed;
 
     private bool _onGround;
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
     
     private bool HasOverlappingColliders(Transform transformCheck)
     {
-        var colliders = Physics2D.OverlapCircleAll(transformCheck.position, CollisionRadius, collisionMask);
+        var colliders = Physics2D.OverlapCircleAll(transformCheck.position, collisionRadius, collisionMask);
         return colliders.Any(t => t.gameObject != gameObject);
     }
     
@@ -120,5 +120,12 @@ public class PlayerMovement : MonoBehaviour
             
             Invoke(nameof(CanMove), wallJumpDuration);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(groundCheck.position, collisionRadius);
+        Gizmos.DrawWireSphere(wallCheck.position, collisionRadius);
     }
 }

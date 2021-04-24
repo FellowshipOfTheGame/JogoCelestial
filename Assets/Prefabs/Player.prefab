@@ -186,7 +186,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  jumpForce: 15
+  jumpForce: 8
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 1.5
   wallJumpLerp: 10
   wallJumpForce: 10
   wallJumpDuration: 0.5
@@ -237,7 +239,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: c70da062593aa40f0b04d89e66e10c97, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1

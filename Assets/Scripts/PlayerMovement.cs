@@ -6,13 +6,18 @@ using Vector2 = UnityEngine.Vector2;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 15f;
+    [Space]
     [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float fallMultiplier = 2.5f;
+    [SerializeField] private float lowJumpMultiplier = 2f;
+    [Space]
     [SerializeField] private float wallJumpLerp = 10f;
     [SerializeField] private float wallJumpForce = 10f;
     [SerializeField] private float wallJumpDuration = .5f;
     
     [SerializeField] private Vector2 wallJumpDirection = Vector2.up + Vector2.right;
-     
+   
+    [Space]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
     
@@ -24,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _onGround;
     private bool _onWall;
     private bool _wallJumped;
+    private bool _canceledJump;
     private bool _facingRight = true;
     private bool _canMove = true;
 
@@ -42,11 +48,23 @@ public class PlayerMovement : MonoBehaviour
         CheckCollisions();
 
         if (_onGround)
+        {
             _wallJumped = false;
-        
+            _canceledJump = false;
+        }
+        else Fall();
+
         Move();
     }
 
+    private void Fall()
+    {
+        if (_rigidbody.velocity.y < 0f)
+            _rigidbody.velocity += Vector2.up * (Physics2D.gravity.y * fallMultiplier * Time.deltaTime);
+        else if (_canceledJump)
+            _rigidbody.velocity += Vector2.up * (Physics2D.gravity.y * lowJumpMultiplier * Time.deltaTime);
+    }
+    
     private void CheckCollisions()
     {
         _onGround = HasOverlappingColliders(groundCheck);
@@ -97,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
         _rigidbody.velocity += vector2;
     }
-    
+
     public void Jump()
     {
         if (_onGround)
@@ -120,5 +138,10 @@ public class PlayerMovement : MonoBehaviour
             
             Invoke(nameof(CanMove), wallJumpDuration);
         }
+    }
+
+    public void JumpCanceled()
+    {
+        _canceledJump = true;
     }
 }

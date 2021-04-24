@@ -14,9 +14,9 @@ public class Player : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if (!ctx.performed) return; // Fix to input action triggering multiple times
+        if (ctx.performed) movement.Jump();
 
-        movement.Jump();
+        if (ctx.canceled) movement.JumpCanceled();
     }
 
     #endregion

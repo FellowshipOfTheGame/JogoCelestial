@@ -16,9 +16,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float wallJumpDuration = .5f;
     
     [SerializeField] private Vector2 wallJumpDirection = Vector2.up + Vector2.right;
-   
-    [Space]
-    [SerializeField] private Transform groundCheck;
+
+    [Space] 
+    [SerializeField] private Transform groundCheckA;
+    [SerializeField] private Transform groundCheckB;
     [SerializeField] private Transform wallCheck;
     
     [SerializeField] private LayerMask collisionMask;
@@ -44,8 +45,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!_canMove)
             return;
-        
-        CheckCollisions();
+
+        CheckGroundCollisions(groundCheckA, groundCheckB);
+        CheckWallCollisions(wallCheck);
 
         if (_onGround)
         {
@@ -65,16 +67,16 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.velocity += Vector2.up * (Physics2D.gravity.y * lowJumpMultiplier * Time.deltaTime);
     }
     
-    private void CheckCollisions()
+    private void CheckGroundCollisions(Transform transformCheckA, Transform transformCheckB)
     {
-        _onGround = HasOverlappingColliders(groundCheck);
-        _onWall = HasOverlappingColliders(wallCheck);
+        var colliders = Physics2D.OverlapAreaAll(transformCheckA.position, transformCheckB.position, collisionMask);
+        _onGround = colliders.Any(t => t.gameObject != gameObject);
     }
-    
-    private bool HasOverlappingColliders(Transform transformCheck)
+
+    private void CheckWallCollisions(Transform transformCheck)
     {
         var colliders = Physics2D.OverlapCircleAll(transformCheck.position, CollisionRadius, collisionMask);
-        return colliders.Any(t => t.gameObject != gameObject);
+        _onWall = colliders.Any(t => t.gameObject != gameObject);
     }
     
     private void Flip()
@@ -143,5 +145,13 @@ public class PlayerMovement : MonoBehaviour
     public void JumpCanceled()
     {
         _canceledJump = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(groundCheckA.position, groundCheckB.position);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(wallCheck.position, CollisionRadius);
     }
 }

@@ -1,8 +1,5 @@
-using System;
 using Cinemachine;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 public class Room : MonoBehaviour
 {

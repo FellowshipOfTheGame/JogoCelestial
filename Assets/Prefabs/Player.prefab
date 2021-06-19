@@ -190,11 +190,11 @@ MonoBehaviour:
   jumpForce: 7
   fallMultiplier: 2.5
   lowJumpMultiplier: 1.5
-  wallJumpLerp: 7.5
-  wallJumpForce: 8
+  wallJumpLerp: 5
+  wallJumpForce: 8.5
   wallJumpDuration: 0.175
   collisionRadius: 0.2
-  wallJumpDirection: {x: 0.8, y: 1}
+  wallJumpDirection: {x: 1.2, y: 1}
   groundCheckA: {fileID: 2957496562226390986}
   groundCheckB: {fileID: 6712219666366166348}
   wallCheck: {fileID: 6361013250143567771}
@@ -220,7 +220,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: c70da062593aa40f0b04d89e66e10c97, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &2246319687890518237
 BoxCollider2D:

@@ -6,31 +6,24 @@ using Vector2 = UnityEngine.Vector2;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed = 15f;
-    [Space]
     [SerializeField] private float jumpForce = 15f;
-    [SerializeField] private float fallMultiplier = 2.5f;
-    [SerializeField] private float lowJumpMultiplier = 2f;
-    [Space]
     [SerializeField] private float wallJumpLerp = 10f;
     [SerializeField] private float wallJumpForce = 10f;
     [SerializeField] private float wallJumpDuration = .5f;
+    [SerializeField] float collisionRadius = .05f;
     
     [SerializeField] private Vector2 wallJumpDirection = Vector2.up + Vector2.right;
-
-    [Space] 
-    [SerializeField] private Transform groundCheckA;
-    [SerializeField] private Transform groundCheckB;
+     
+    [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
     
     [SerializeField] private LayerMask collisionMask;
 
-    private const float CollisionRadius = .05f;
     private float _moveSpeed;
 
     private bool _onGround;
     private bool _onWall;
     private bool _wallJumped;
-    private bool _canceledJump;
     private bool _facingRight = true;
     private bool _canMove = true;
 
@@ -45,38 +38,25 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!_canMove)
             return;
-
-        CheckGroundCollisions(groundCheckA, groundCheckB);
-        CheckWallCollisions(wallCheck);
+        
+        CheckCollisions();
 
         if (_onGround)
-        {
             _wallJumped = false;
-            _canceledJump = false;
-        }
-        else Fall();
-
+        
         Move();
     }
 
-    private void Fall()
+    private void CheckCollisions()
     {
-        if (_rigidbody.velocity.y < 0f)
-            _rigidbody.velocity += Vector2.up * (Physics2D.gravity.y * fallMultiplier * Time.deltaTime);
-        else if (_canceledJump)
-            _rigidbody.velocity += Vector2.up * (Physics2D.gravity.y * lowJumpMultiplier * Time.deltaTime);
+        _onGround = HasOverlappingColliders(groundCheck);
+        _onWall = HasOverlappingColliders(wallCheck);
     }
     
-    private void CheckGroundCollisions(Transform transformCheckA, Transform transformCheckB)
+    private bool HasOverlappingColliders(Transform transformCheck)
     {
-        var colliders = Physics2D.OverlapAreaAll(transformCheckA.position, transformCheckB.position, collisionMask);
-        _onGround = colliders.Any(t => t.gameObject != gameObject);
-    }
-
-    private void CheckWallCollisions(Transform transformCheck)
-    {
-        var colliders = Physics2D.OverlapCircleAll(transformCheck.position, CollisionRadius, collisionMask);
-        _onWall = colliders.Any(t => t.gameObject != gameObject);
+        var colliders = Physics2D.OverlapCircleAll(transformCheck.position, collisionRadius, collisionMask);
+        return colliders.Any(t => t.gameObject != gameObject);
     }
     
     private void Flip()
@@ -117,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
         _rigidbody.velocity += vector2;
     }
-
+    
     public void Jump()
     {
         if (_onGround)
@@ -142,16 +122,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void JumpCanceled()
-    {
-        _canceledJump = true;
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(groundCheckA.position, groundCheckB.position);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(wallCheck.position, CollisionRadius);
+        Gizmos.DrawWireSphere(groundCheck.position, collisionRadius);
+        Gizmos.DrawWireSphere(wallCheck.position, collisionRadius);
     }
 }

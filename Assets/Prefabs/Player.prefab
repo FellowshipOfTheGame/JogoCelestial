@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2957496562226390986}
   m_Layer: 6
-  m_Name: GroundCheckA
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361276648909256941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: -0.191, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2379642636800435240}
@@ -54,11 +54,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2979222119334343258}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2379642636800435240}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6862992043993526228
 GameObject:
@@ -94,7 +94,6 @@ Transform:
   m_Children:
   - {fileID: 8723776082400418510}
   - {fileID: 2957496562226390986}
-  - {fileID: 6712219666366166348}
   - {fileID: 6361013250143567771}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -186,16 +185,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114b506cad6ce46bd99873a10126c394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  jumpForce: 4
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 1.5
-  wallJumpLerp: 10
-  wallJumpForce: 2
-  wallJumpDuration: 0.5
-  wallJumpDirection: {x: 1, y: 1}
-  groundCheckA: {fileID: 2957496562226390986}
-  groundCheckB: {fileID: 6712219666366166348}
+  speed: 12
+  jumpForce: 15
+  wallJumpLerp: 7.5
+  wallJumpForce: 15
+  wallJumpDuration: 0.175
+  collisionRadius: 0.2
+  wallJumpDirection: {x: 0.8, y: 1}
+  groundCheck: {fileID: 2957496562226390986}
   wallCheck: {fileID: 6361013250143567771}
   collisionMask:
     serializedVersion: 2
@@ -213,7 +210,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.015489932, y: -0.010182887}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -224,7 +221,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2515117, y: 0.3572331}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2106347767283432829
 Rigidbody2D:
@@ -241,42 +238,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: c70da062593aa40f0b04d89e66e10c97, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!1 &7676153631636541233
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6712219666366166348}
-  m_Layer: 6
-  m_Name: GroundCheckB
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6712219666366166348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7676153631636541233}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.087, y: -0.191, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2379642636800435240}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8245959150087861581
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +316,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c907d5cc5574141cab82ac9054c78570, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

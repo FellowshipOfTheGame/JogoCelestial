@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     {
         if (ctx.performed) movement.Jump();
 
-        if (ctx.canceled) movement.JumpCanceled();
+        //if (ctx.canceled) movement.JumpCanceled();
     }
 
     public void OnGrappleHook(InputAction.CallbackContext ctx)

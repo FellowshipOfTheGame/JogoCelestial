@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float _moveSpeed;
 
-    private bool _onGround;
+    [HideInInspector] public bool _onGround;
     private bool _onWall;
     private bool _wallJumped;
     private bool _facingRight = true;

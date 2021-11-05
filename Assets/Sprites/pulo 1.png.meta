@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 7ff3d5b95a827314ab4006fde8ff5e1d
+guid: 02e68db041b802845a45c7732d3e4cca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8793639957104055765
-    second: idle_0
+      213: 7536960817715298136
+    second: pulo 1_0
   - first:
-      213: 6084859605308855041
-    second: idle_1
+      213: 5407408815186957272
+    second: pulo 1_1
   - first:
-      213: 8603369663158992956
-    second: idle_2
+      213: 3535459464692967605
+    second: pulo 1_2
   - first:
-      213: -5906421172241655209
-    second: idle_3
+      213: -269799686199085185
+    second: pulo 1_3
+  - first:
+      213: -2910185540275255835
+    second: pulo 1_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: pulo 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 38
+        width: 32
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d55ed543f8490a70800000000000000
-      internalID: 8793639957104055765
+      spriteID: 85f35f16ee9a89860800000000000000
+      internalID: 7536960817715298136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: pulo 1_1
       rect:
         serializedVersion: 2
-        x: 31
+        x: 32
         y: 0
-        width: 31
-        height: 38
+        width: 32
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 103de827293c17450800000000000000
-      internalID: 6084859605308855041
+      spriteID: 8d3d880faa9fa0b40800000000000000
+      internalID: 5407408815186957272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: pulo 1_2
       rect:
         serializedVersion: 2
-        x: 62
+        x: 64
         y: 0
-        width: 31
-        height: 38
+        width: 32
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c30c6f3402f456770800000000000000
-      internalID: 8603369663158992956
+      spriteID: 5b821d6c6a9701130800000000000000
+      internalID: 3535459464692967605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: pulo 1_3
       rect:
         serializedVersion: 2
-        x: 93
+        x: 96
         y: 0
-        width: 31
-        height: 38
+        width: 32
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +219,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75a90b6cc3d280ea0800000000000000
-      internalID: -5906421172241655209
+      spriteID: f7777976d9a714cf0800000000000000
+      internalID: -269799686199085185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pulo 1_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e54a618ba1fc97d0800000000000000
+      internalID: -2910185540275255835
       vertices: []
       indices: 
       edges: []

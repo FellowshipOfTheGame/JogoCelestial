@@ -29,9 +29,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
+    private Animator animator;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -45,6 +48,25 @@ public class PlayerMovement : MonoBehaviour
             _wallJumped = false;
         
         Move();
+
+        ///////////// ANIMAÇÕES\\\\\\\\\\\\\
+
+        //"andando"\\
+        bool estaAndando = Mathf.Abs(_rigidbody.velocity.x) >= 0.05f;
+        animator.SetBool("andando", estaAndando);
+
+        //"subindo"\\
+        bool estaSubindo = _rigidbody.velocity.y >= 2f;
+        animator.SetBool("subindo", estaSubindo);
+
+        //"noAr"\\
+        bool estaNoAr = _rigidbody.velocity.y < -1f && _rigidbody.velocity.y >= -6f;
+        animator.SetBool("noAr", estaNoAr);
+
+        //caindo\\
+        bool estaCaindo = _rigidbody.velocity.y < -6f;
+        animator.SetBool("caindo", estaCaindo);
+
     }
 
     private void CheckCollisions()

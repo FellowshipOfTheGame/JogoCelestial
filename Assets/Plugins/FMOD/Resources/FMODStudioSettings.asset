@@ -278,10 +278,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 0
-  HasPlatforms: 0
+  HasSourceProject: 1
+  HasPlatforms: 1
   sourceProjectPath: FMOD/Jogo_celestial/Jogo_celestial.fspro
-  sourceBankPath: ../../../../../../Documentos/FMOD Studio/Jogo_celestial/Build/Desktop
+  sourceBankPath: FMOD/Jogo_celestial/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -303,7 +303,7 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

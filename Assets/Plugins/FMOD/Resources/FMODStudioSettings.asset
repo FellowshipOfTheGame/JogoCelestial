@@ -60,14 +60,14 @@ MonoBehaviour:
       Value: {fileID: 0}
       HasValue: 0
   childIdentifiers:
-  - 2fea114e74ecf3c4f920e1d5cc1c4c40
-  - 46fbfdf3fc43db0458918377fd40293e
-  - 0f8eb3f400726694eb47beb1a9f94ce8
-  - b7716510a1f36934c87976f3a81dbf3d
   - 52eb9df5db46521439908db3a29a1bbb
-  - e7a046c753c3c3d4aacc91f6597f310d
-  - 2c5177b11d81d824dbb064f9ac8527da
   - fd7c55dab0fce234b8c25f6ffca523c1
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - 46fbfdf3fc43db0458918377fd40293e
+  - b7716510a1f36934c87976f3a81dbf3d
+  - 2fea114e74ecf3c4f920e1d5cc1c4c40
+  - 2c5177b11d81d824dbb064f9ac8527da
   - c88d16e5272a4e241b0ef0ac2e53b73d
   outputType: 
   threadAffinities:
@@ -280,8 +280,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: 
-  sourceBankPath: 
+  sourceProjectPath: FMOD/Jogo_celestial/Jogo_celestial.fspro
+  sourceBankPath: FMOD/Jogo_celestial/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -302,7 +302,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -314,18 +315,18 @@ MonoBehaviour:
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   Platforms:
-  - {fileID: 5662831575101575092}
-  - {fileID: 4371898178358931388}
-  - {fileID: 2397258180042681149}
-  - {fileID: 5225000544631329832}
-  - {fileID: -3568677243739149105}
-  - {fileID: -1956343317783218707}
-  - {fileID: 6789257099722517383}
-  - {fileID: -2172969759163490482}
-  - {fileID: 7037281376797384515}
   - {fileID: -5910447247493404127}
+  - {fileID: -3568677243739149105}
+  - {fileID: -2172969759163490482}
+  - {fileID: -1956343317783218707}
+  - {fileID: 2397258180042681149}
+  - {fileID: 4371898178358931388}
+  - {fileID: 5225000544631329832}
+  - {fileID: 5662831575101575092}
+  - {fileID: 6789257099722517383}
+  - {fileID: 7037281376797384515}
   - {fileID: 8457607765201986820}
   MigratedPlatforms: 0c000000150000000b0000000a00000009000000120000000800000005000000060000000200000001000000
 --- !u!114 &2397258180042681149

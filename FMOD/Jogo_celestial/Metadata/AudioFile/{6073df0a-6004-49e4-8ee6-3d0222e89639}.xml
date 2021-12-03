@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{6073df0a-6004-49e4-8ee6-3d0222e89639}">
+		<property name="assetPath">
+			<value>clank.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.31377083333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0733e74f-1bbd-4c7d-9eed-8abecead4fa6}</destination>
+		</relationship>
+	</object>
+</objects>

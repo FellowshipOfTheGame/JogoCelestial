@@ -117,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _onWall = false;
             Vector2 topRight = _collider.bounds.max;
-            Vector2 topLeft = new Vector2(_collider.bounds.max.x, _collider.bounds.max.y);
+            Vector2 topLeft = new Vector2(_collider.bounds.min.x, _collider.bounds.max.y);
             float gap = _collider.bounds.size.y / (terrainDetectionCount - 1);
 
             for (int i = 0; i < terrainDetectionCount; i++)

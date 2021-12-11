@@ -38,10 +38,13 @@ public class PlayerMovement : MonoBehaviour
     private float _jumpGraceTimer;
     private int _jumpCount;
 
+    private Animator animator;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -73,6 +76,25 @@ public class PlayerMovement : MonoBehaviour
         }
         
         Move();
+
+        ///////////// ANIMA��ES\\\\\\\\\\\\\
+
+        //"andando"\\
+        bool estaAndando = Mathf.Abs(_rigidbody.velocity.x) >= 0.05f;
+        animator.SetBool("andando", estaAndando);
+
+        //"subindo"\\
+        bool estaSubindo = _rigidbody.velocity.y >= 2f;
+        animator.SetBool("subindo", estaSubindo);
+
+        //"noAr"\\
+        bool estaNoAr = _rigidbody.velocity.y < -1f && _rigidbody.velocity.y >= -6f;
+        animator.SetBool("noAr", estaNoAr);
+
+        //caindo\\
+        bool estaCaindo = _rigidbody.velocity.y < -6f;
+        animator.SetBool("caindo", estaCaindo);
+
     }
 
     private void CheckCollisions()

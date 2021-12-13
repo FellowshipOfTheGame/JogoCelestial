@@ -1,6 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+//script relacionado
+//Chave:
+//-detecta se pegou chave
 
 public class PortaChave : MonoBehaviour
 {
@@ -10,22 +14,49 @@ public class PortaChave : MonoBehaviour
     [HideInInspector] public int nChavesPegos = 0; //numero de chaves pegos
 
     //Componentes Porta
-    private GameObject porta; //gameObject da porta
+    private GameObject porta;
+    Animator animator;
+    AnimatorStateInfo stateInfo;
 
 
     void Start()
     {
-        //pega o gameObject da porta(precisa estar com nome "Porta")
+        //pega componentes da porta(precisa estar com nome "Porta")
         porta = transform.Find("Porta").gameObject;
+        animator = porta.GetComponent<Animator>();
+        stateInfo = animator.GetCurrentAnimatorStateInfo(0);
     }
 
 
-    void Update()
+    private bool isFechando = false; //true se a porta ta fechando
+    private bool isAcabouFechar = false; //ve se acabou a animacao "Fechando"
+    void FixedUpdate()
     {
-        //se pegar todas as chaves, apaga a porta
-        if(nChavesPegos == nChaves)
+        //se pegar todas as chaves, comeca a animacao de fechar
+        if(nChavesPegos == nChaves && !isFechando)
         {
-            porta.SetActive(false);
+            isFechando = true;
+            StartCoroutine(WaitAnimation());
         }
+
+        //ve se acabou a animacao
+        if(isFechando)
+        {
+            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            isAcabouFechar = stateInfo.normalizedTime >= 1 && stateInfo.IsName("Fechando");
+        }
+    }
+
+
+    private IEnumerator WaitAnimation()
+    {
+        //comeca a animacao do "Fechando"
+        animator.SetBool("isFechar", true);
+
+        //espera ate acabar a animacao 
+        yield return new WaitWhile(() => !isAcabouFechar);
+
+        //apaga a porta
+        porta.SetActive(false);
     }
 }

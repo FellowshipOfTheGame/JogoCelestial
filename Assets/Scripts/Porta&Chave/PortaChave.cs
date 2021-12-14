@@ -28,33 +28,33 @@ public class PortaChave : MonoBehaviour
     }
 
 
-    private bool isFechando = false; //true se a porta ta fechando
-    private bool isAcabouFechar = false; //ve se acabou a animacao "Fechando"
+    private bool isAbrindo = false; //true se a porta ta abrindo
+    private bool isAcabouAbrir = false; //ve se acabou a animacao "Abrindo"
     void FixedUpdate()
     {
-        //se pegar todas as chaves, comeca a animacao de fechar
-        if(nChavesPegos == nChaves && !isFechando)
+        //se pegar todas as chaves, comeca a animacao de abrir
+        if(nChavesPegos == nChaves && !isAbrindo)
         {
-            isFechando = true;
+            isAbrindo = true;
             StartCoroutine(WaitAnimation());
         }
 
         //ve se acabou a animacao
-        if(isFechando)
+        if(isAbrindo)
         {
             stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            isAcabouFechar = stateInfo.normalizedTime >= 1 && stateInfo.IsName("Fechando");
+            isAcabouAbrir = stateInfo.normalizedTime >= 1 && stateInfo.IsName("Abrindo");
         }
     }
 
 
     private IEnumerator WaitAnimation()
     {
-        //comeca a animacao do "Fechando"
+        //comeca a animacao do "Abrindo"
         animator.SetBool("isFechar", true);
 
         //espera ate acabar a animacao 
-        yield return new WaitWhile(() => !isAcabouFechar);
+        yield return new WaitWhile(() => !isAcabouAbrir);
 
         //apaga a porta
         porta.SetActive(false);

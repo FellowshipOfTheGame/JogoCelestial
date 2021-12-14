@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EventFolder" id="{86ce5e9c-ad97-4159-99b4-a2228a30be68}">
+		<property name="name">
+			<value>Jogo Celestial</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f735b060-95df-4607-86e8-48bfe25337e6}</destination>
+		</relationship>
+	</object>
+</objects>

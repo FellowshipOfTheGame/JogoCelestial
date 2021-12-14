@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{48987402-ef20-495a-b26a-80839542b76e}">
+		<property name="assetPath">
+			<value>Decolando no ar.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.20189583333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0733e74f-1bbd-4c7d-9eed-8abecead4fa6}</destination>
+		</relationship>
+	</object>
+</objects>

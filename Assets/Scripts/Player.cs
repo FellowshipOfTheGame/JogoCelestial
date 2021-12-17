@@ -8,11 +8,12 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private GrapplingGun grapplingGun;
 
+    
     private void Update()
     {
         grapplingGun.UpdateTargetPosition(mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
     }
-
+    
     #region Input Handler
 
     public void OnMove(InputAction.CallbackContext ctx)

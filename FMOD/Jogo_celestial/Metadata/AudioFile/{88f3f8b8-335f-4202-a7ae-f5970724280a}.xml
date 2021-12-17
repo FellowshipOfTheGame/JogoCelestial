@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{88f3f8b8-335f-4202-a7ae-f5970724280a}">
+		<property name="assetPath">
+			<value>Violoncelo_Trilha_Celestimiau.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>112.06530612244897</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0733e74f-1bbd-4c7d-9eed-8abecead4fa6}</destination>
+		</relationship>
+	</object>
+</objects>

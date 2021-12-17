@@ -293,18 +293,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114b506cad6ce46bd99873a10126c394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11
-  jumpForce: 14.7
+  speed: 9.5
+  jumpForce: 13.7
   wallJumpLerp: 2
-  wallJumpForce: 13.3
-  wallJumpDuration: 0.035
+  wallJumpForce: 11
+  wallJumpDuration: 0.03
   collisionRadius: 0.2
+  jumpGraceTime: 0.15
+  jumpAmmount: 2
+  slideSpeed: 0.5
   wallJumpDirection: {x: 0.8, y: 1}
-  groundCheck: {fileID: 264892077292567781}
-  wallCheck: {fileID: 8277877101604627636}
   collisionMask:
     serializedVersion: 2
     m_Bits: 55
+  terrainDetectionCount: 3
+  _onGround: 0
 --- !u!61 &2855042643556123240
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 1448347746}
   - component: {fileID: 1448347745}
   - component: {fileID: 1448347744}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2659,7 +2659,7 @@ MonoBehaviour:
   wallJumpDirection: {x: 0.8, y: 1}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 566
   terrainDetectionCount: 3
   _onGround: 0
 --- !u!61 &2855042642059523259

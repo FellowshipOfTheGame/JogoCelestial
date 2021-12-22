@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed;
 
     [HideInInspector] public bool _onGround;
+    private bool _onCloud;
     private bool _onWall;
     private bool _wallJumped;
     private bool _facingRight = true;
@@ -55,14 +56,14 @@ public class PlayerMovement : MonoBehaviour
             _jumpGraceTimer -= Time.deltaTime;
         }
     }
-    
+
     private void FixedUpdate()
     {
         if (!_canMove)
             return;
-        
+
         CheckCollisions();
-        
+
         if (_onGround)
         {
             _jumpGraceTimer = jumpGraceTime;
@@ -74,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -slideSpeed);
         }
-        
+
         Move();
 
         ///////////// ANIMA��ES\\\\\\\\\\\\\
@@ -101,7 +102,9 @@ public class PlayerMovement : MonoBehaviour
     {
         // Ground detection
         {
-            _onGround = false;
+            if (_onCloud) _onCloud = false;
+            else _onGround = false;
+
             Vector2 bottomLeft = _collider.bounds.min;
             float gap = _collider.bounds.size.x / (terrainDetectionCount - 1);
 
@@ -112,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.DrawLine(origin, origin + Vector2.down * collisionRadius, _onGround ? Color.green : Color.red);
             }
         }
-        
+
         // Wall detection
         {
             _onWall = false;
@@ -131,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
+
     private void Flip()
     {
         _facingRight = !_facingRight;
@@ -160,11 +163,12 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveSpeed = direction * speed;
     }
-    
-    private void CanMove() {
+
+    private void CanMove()
+    {
         _canMove = true;
     }
-    
+
     private void Jump(Vector2 vector2)
     {
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
@@ -178,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return false;
         }
-        
+
         _jumpCount++;
         return _jumpCount < jumpAmmount;
     }
@@ -193,16 +197,56 @@ public class PlayerMovement : MonoBehaviour
         else if (_onWall)
         {
             _onWall = false;
-            
+
             var oppositeXDirection = _facingRight ? -1 : 1;
             Jump(new Vector2(wallJumpDirection.x * oppositeXDirection, wallJumpDirection.y) * wallJumpForce);
-            
+
             Flip();
-            
+
             _wallJumped = true;
             _canMove = false;
-            
+
             Invoke(nameof(CanMove), wallJumpDuration);
+        }
+    }
+
+
+    //se mudar o numero do layer "Cloud", precisa mudar a "cloudLayerNumber"
+    //se encostar na nuvem por cima, detecta que esta no chao
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        int cloudLayerNumber = 10;
+        if (collision.gameObject.layer == cloudLayerNumber)
+        {
+            BoxCollider2D cloudCol = collision.gameObject.GetComponent<BoxCollider2D>();
+            float playerPos = _collider.transform.position.y - (_collider.size.y / 2);
+            float cloudPos = cloudCol.transform.position.y + (cloudCol.size.y / 2);
+            bool isPlayerUp = playerPos >= cloudPos;
+
+            if (isPlayerUp)
+            {
+                _onGround = true;
+                _onCloud = true;
+            }
+        }
+    }
+
+    //se encostar na nuvem por cima, detecta que esta no chao
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        int cloudLayerNumber = 10;
+        if (collision.gameObject.layer == cloudLayerNumber)
+        {
+            BoxCollider2D cloudCol = collision.gameObject.GetComponent<BoxCollider2D>();
+            float playerPos = _collider.transform.position.y - (_collider.size.y / 2);
+            float cloudPos = cloudCol.transform.position.y + (cloudCol.size.y / 2);
+            bool isPlayerUp = playerPos >= cloudPos;
+
+            if (isPlayerUp)
+            {
+                _onGround = true;
+                _onCloud = true;
+            }
         }
     }
 }

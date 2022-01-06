@@ -3220,6 +3220,7 @@ MonoBehaviour:
     m_Bits: 566
   terrainDetectionCount: 3
   _onGround: 0
+  wallJumpAnimSec: 0.25
 --- !u!61 &2855042642059523259
 BoxCollider2D:
   m_ObjectHideFlags: 0

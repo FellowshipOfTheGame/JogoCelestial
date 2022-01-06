@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -99,6 +100,11 @@ public class PlayerMovement : MonoBehaviour
         bool estaCaindo = _rigidbody.velocity.y < -6f;
         animator.SetBool("caindo", estaCaindo);
 
+        //aterrizagem\\
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("caindo") && _onGround)
+        {
+            animator.Play("aterrizagem");
+        }
     }
 
     private void CheckCollisions()
@@ -140,8 +146,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        _facingRight = !_facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        //vira para outro lado se não tiver fazendo o wallJump
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("wallJump"))
+        {
+            _facingRight = !_facingRight;
+            transform.Rotate(0f, 180f, 0f);
+        }
     }
 
     private void Move()
@@ -210,7 +220,17 @@ public class PlayerMovement : MonoBehaviour
             _canMove = false;
 
             Invoke(nameof(CanMove), wallJumpDuration);
+
+            StartCoroutine(WallJumpAnimation());
         }
+    }
+
+    public float wallJumpAnimSec;
+    private IEnumerator WallJumpAnimation()
+    {
+        animator.Play("wallJump");
+        yield return new WaitForSeconds(wallJumpAnimSec);
+        animator.Play("subindo");
     }
 
 

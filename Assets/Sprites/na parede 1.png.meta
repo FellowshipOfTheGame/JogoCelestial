@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 606c193d8a0f8974892336f42ecf0db3
+guid: bc5224327aad31a49b5a8a67438c379d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5615455780269592675
-    second: na parede_0
+      213: 4586296518117116073
+    second: na parede 1_0
   - first:
-      213: -2249818739079857804
-    second: na parede_1
+      213: 7164901128353098878
+    second: na parede 1_1
   - first:
-      213: -8583810005727862385
-    second: na parede_2
+      213: -4592102319759193676
+    second: na parede 1_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,7 +125,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: na parede_0
+      name: na parede 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,20 +144,20 @@ TextureImporter:
         width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9fed1548b4e112b0800000000000000
-      internalID: -5615455780269592675
+      spriteID: 9a84bfc426cc5af30800000000000000
+      internalID: 4586296518117116073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: na parede_1
+      name: na parede 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -165,20 +165,20 @@ TextureImporter:
         width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 479b020e6c907c0e0800000000000000
-      internalID: -2249818739079857804
+      spriteID: e7c284e6d97de6360800000000000000
+      internalID: 7164901128353098878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: na parede_2
+      name: na parede 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -186,14 +186,14 @@ TextureImporter:
         width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81a52d574e20e880800000000000000
-      internalID: -8583810005727862385
+      spriteID: 4b9818a25439540c0800000000000000
+      internalID: -4592102319759193676
       vertices: []
       indices: 
       edges: []

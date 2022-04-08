@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 606c193d8a0f8974892336f42ecf0db3
+guid: 371525b5d5fe0764cb1b604d39184829
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5615455780269592675
-    second: na parede_0
+      213: -2174490954109799774
+    second: na parede (2)_0
   - first:
-      213: -2249818739079857804
-    second: na parede_1
+      213: -4445596616263494284
+    second: na parede (2)_1
   - first:
-      213: -8583810005727862385
-    second: na parede_2
+      213: -4881032779818552454
+    second: na parede (2)_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,31 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -136,7 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: na parede_0
+      name: na parede (2)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9fed1548b4e112b0800000000000000
-      internalID: -5615455780269592675
+      spriteID: 2a23cf88ff7a2d1e0800000000000000
+      internalID: -2174490954109799774
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: na parede_1
+      name: na parede (2)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -171,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 479b020e6c907c0e0800000000000000
-      internalID: -2249818739079857804
+      spriteID: 4759fe86e611e42c0800000000000000
+      internalID: -4445596616263494284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: na parede_2
+      name: na parede (2)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -192,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f81a52d574e20e880800000000000000
-      internalID: -8583810005727862385
+      spriteID: a73b0ed2c86134cb0800000000000000
+      internalID: -4881032779818552454
       vertices: []
       indices: 
       edges: []

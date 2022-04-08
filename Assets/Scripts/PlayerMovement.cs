@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed;
 
     [HideInInspector] public bool _onGround;
+    private bool _onCloud;
     private bool _onWall;
     private bool _wallJumped;
     private bool _facingRight = true;
@@ -55,14 +57,14 @@ public class PlayerMovement : MonoBehaviour
             _jumpGraceTimer -= Time.deltaTime;
         }
     }
-    
+
     private void FixedUpdate()
     {
         if (!_canMove)
             return;
-        
+
         CheckCollisions();
-        
+
         if (_onGround)
         {
             _jumpGraceTimer = jumpGraceTime;
@@ -73,9 +75,12 @@ public class PlayerMovement : MonoBehaviour
         if (_onWall && _rigidbody.velocity.y < 0 && _moveSpeed > 0)
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -slideSpeed);
+            animator.SetBool("naParede", true); // ANIMAÇÃO da parede fica true
         }
-        
-        Move();
+        else { animator.SetBool("naParede", false); } // ANIMAÇÃO da parede fica false
+
+
+    Move();
 
         ///////////// ANIMA��ES\\\\\\\\\\\\\
 
@@ -95,13 +100,20 @@ public class PlayerMovement : MonoBehaviour
         bool estaCaindo = _rigidbody.velocity.y < -6f;
         animator.SetBool("caindo", estaCaindo);
 
+        //aterrizagem\\
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("caindo") && _onGround)
+        {
+            animator.Play("aterrizagem");
+        }
     }
 
     private void CheckCollisions()
     {
         // Ground detection
         {
-            _onGround = false;
+            if (_onCloud) _onCloud = false;
+            else _onGround = false;
+
             Vector2 bottomLeft = _collider.bounds.min;
             float gap = _collider.bounds.size.x / (terrainDetectionCount - 1);
 
@@ -112,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
                 Debug.DrawLine(origin, origin + Vector2.down * collisionRadius, _onGround ? Color.green : Color.red);
             }
         }
-        
+
         // Wall detection
         {
             _onWall = false;
@@ -131,11 +143,15 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
+
     private void Flip()
     {
-        _facingRight = !_facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        //vira para outro lado se não tiver fazendo o wallJump
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("wallJump"))
+        {
+            _facingRight = !_facingRight;
+            transform.Rotate(0f, 180f, 0f);
+        }
     }
 
     private void Move()
@@ -160,11 +176,12 @@ public class PlayerMovement : MonoBehaviour
     {
         _moveSpeed = direction * speed;
     }
-    
-    private void CanMove() {
+
+    private void CanMove()
+    {
         _canMove = true;
     }
-    
+
     private void Jump(Vector2 vector2)
     {
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, 0);
@@ -178,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return false;
         }
-        
+
         _jumpCount++;
         return _jumpCount < jumpAmmount;
     }
@@ -193,16 +210,66 @@ public class PlayerMovement : MonoBehaviour
         else if (_onWall)
         {
             _onWall = false;
-            
+
             var oppositeXDirection = _facingRight ? -1 : 1;
             Jump(new Vector2(wallJumpDirection.x * oppositeXDirection, wallJumpDirection.y) * wallJumpForce);
-            
+
             Flip();
-            
+
             _wallJumped = true;
             _canMove = false;
-            
+
             Invoke(nameof(CanMove), wallJumpDuration);
+
+            StartCoroutine(WallJumpAnimation());
+        }
+    }
+
+    public float wallJumpAnimSec;
+    private IEnumerator WallJumpAnimation()
+    {
+        animator.Play("wallJump");
+        yield return new WaitForSeconds(wallJumpAnimSec);
+        animator.Play("subindo");
+    }
+
+
+    //se mudar o numero do layer "Cloud", precisa mudar a "cloudLayerNumber"
+    //se encostar na nuvem por cima, detecta que esta no chao
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        int cloudLayerNumber = 10;
+        if (collision.gameObject.layer == cloudLayerNumber)
+        {
+            BoxCollider2D cloudCol = collision.gameObject.GetComponent<BoxCollider2D>();
+            float playerPos = _collider.transform.position.y - (_collider.size.y / 2);
+            float cloudPos = cloudCol.transform.position.y + (cloudCol.size.y / 2);
+            bool isPlayerUp = playerPos >= cloudPos;
+
+            if (isPlayerUp)
+            {
+                _onGround = true;
+                _onCloud = true;
+            }
+        }
+    }
+
+    //se encostar na nuvem por cima, detecta que esta no chao
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        int cloudLayerNumber = 10;
+        if (collision.gameObject.layer == cloudLayerNumber)
+        {
+            BoxCollider2D cloudCol = collision.gameObject.GetComponent<BoxCollider2D>();
+            float playerPos = _collider.transform.position.y - (_collider.size.y / 2);
+            float cloudPos = cloudCol.transform.position.y + (cloudCol.size.y / 2);
+            bool isPlayerUp = playerPos >= cloudPos;
+
+            if (isPlayerUp)
+            {
+                _onGround = true;
+                _onCloud = true;
+            }
         }
     }
 }

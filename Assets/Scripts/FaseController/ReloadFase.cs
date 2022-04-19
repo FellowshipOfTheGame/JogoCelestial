@@ -6,17 +6,31 @@ using UnityEngine.SceneManagement;
 public class ReloadFase : MonoBehaviour
 {
     DamageSystem damSys = null;
+    Fade fade = null;
+
+    private bool fading = false;
+
     void Start()
     {
         GameObject player = GameObject.FindWithTag("Player");
         damSys = player.GetComponent<DamageSystem>();
+
+        GameObject fadeObj = GameObject.Find("Fade");
+        fade = fadeObj.GetComponent<Fade>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(damSys.isDied)
+        if(damSys.isDied && !fading)
         {
+            fading = true;
+            fade.StartFadeOut();
+            Debug.Log("aa");
+        }
+        if(fade.IsFadeOutComplete())
+        {
+            Debug.Log("bb");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

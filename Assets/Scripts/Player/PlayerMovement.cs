@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed;
 
     [HideInInspector] public bool _onGround;
+    [HideInInspector] public bool _isDead; //setado no DamageSystem.cs
     private bool _onCloud;
     private bool _onWall;
     private bool _wallJumped;
@@ -60,8 +61,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_canMove)
+        //ele nao consegue fazer nada quando esta com _isDead = true
+        if (_isDead)
+        {
+            _rigidbody.velocity = new Vector2(0, 0);
+            _rigidbody.gravityScale = 0;
             return;
+        }
+       
+        if (!_canMove) return;
+ 
 
         CheckCollisions();
 
@@ -72,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             _wallJumped = false;
         }
 
-        if (_onWall && _rigidbody.velocity.y < 0 && _moveSpeed > 0)
+        if (_onWall && _rigidbody.velocity.y < 0 && _moveSpeed != 0)
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -slideSpeed);
             animator.SetBool("naParede", true); // ANIMAÇÃO da parede fica true

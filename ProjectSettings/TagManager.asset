@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DamageArea
+  - FimDaSerra
   layers:
   - Default
   - TransparentFX

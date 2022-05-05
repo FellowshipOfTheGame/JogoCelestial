@@ -145,8 +145,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 Vector2 originRight = new Vector2(topRight.x, topRight.y - i * gap);
                 Vector2 originLeft = new Vector2(topLeft.x, topLeft.y - i * gap);
-                _onWall = _onWall || Physics2D.Raycast(originRight, Vector2.right, collisionRadius, collisionMask);
-                _onWall = _onWall || Physics2D.Raycast(originLeft, Vector2.left, collisionRadius, collisionMask);
+                if(_facingRight)
+                    _onWall = _onWall || Physics2D.Raycast(originRight, Vector2.right, collisionRadius, collisionMask);
+                else
+                    _onWall = _onWall || Physics2D.Raycast(originLeft, Vector2.left, collisionRadius, collisionMask);
                 Debug.DrawLine(originRight, originRight + Vector2.right * collisionRadius, _onWall ? Color.green : Color.red);
                 Debug.DrawLine(originLeft, originLeft + Vector2.left * collisionRadius, _onWall ? Color.green : Color.red);
             }

@@ -32,7 +32,7 @@ public class SceneSaveVariables : MonoBehaviour
 
 
     //pega Componentes
-    private List<GameObject> items = new List<GameObject>();
+    public List<GameObject> items = new List<GameObject>();
     private void Start()
     {
         //item coletavel

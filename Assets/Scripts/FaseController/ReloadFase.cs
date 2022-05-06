@@ -19,18 +19,16 @@ public class ReloadFase : MonoBehaviour
         fade = fadeObj.GetComponent<Fade>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if(damSys.isDied && !fading)
         {
             fading = true;
             fade.StartFadeOut();
-            Debug.Log("aa");
         }
         if(fade.IsFadeOutComplete())
         {
-            Debug.Log("bb");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

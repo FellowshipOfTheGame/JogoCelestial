@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 1.unity
+    guid: 38ace793dc51cd64491672b85d5f1341
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 2.unity
+    guid: 29e1309d0eee20543a0a0bf934e9b8ea
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 3.unity
+    guid: df5c27195be967340a4fbb588860451f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 4.unity
+    guid: 159219bae9dc3654d94e43f803e7a39e
   m_configObjects: {}

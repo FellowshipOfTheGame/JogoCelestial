@@ -16,9 +16,32 @@ public class LevelButton : MonoBehaviour
 {
     [HideInInspector] public int LevelNumber;
 
+    private Fade fade;
+    private bool startFade = false;
+    private bool isFading = false;
+
     //chamado quando clica no botao
     public void GoToFase()
     {
-        SceneManager.LoadScene(LevelNumber);
+        startFade = true;
+    }
+
+    private void Start()
+    {
+        GameObject fadeObj = GameObject.Find("Fade");
+        fade = fadeObj.GetComponent<Fade>();
+    }
+
+    private void Update()
+    {
+        if (startFade && !isFading)
+        {
+            isFading = true;
+            fade.StartFadeOut();
+        }
+        if (startFade && fade.IsFadeOutComplete())
+        {
+            SceneManager.LoadScene(LevelNumber);
+        }
     }
 }

@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
             isFading = true;
             fade.StartFadeOut();
         }
-        if (fade.IsFadeOutComplete())
+        if (startFade && fade.IsFadeOutComplete())
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

@@ -42,6 +42,7 @@ public class LevelSelector : MonoBehaviour
         GameObject level1Button = transform.Find("Level1Button").gameObject;
         level1Pos = level1Button.transform.position;
 
+
         ///cria os botoes
         int levelCounter = 0;
         for (int i = 0; i < maxXButton; i++)
@@ -69,8 +70,8 @@ public class LevelSelector : MonoBehaviour
                     button.GetComponent<Button>().enabled = false;
             }
         }
-        
-        
+        level1Button.SetActive(false);
+
     }
 
     //usado para debugar

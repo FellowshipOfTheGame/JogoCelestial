@@ -26,6 +26,6 @@ public class ContadorItens : MonoBehaviour
                 itemCounter++;
         }
         
-        text.text = "Numero de itens pegos: " + (saveVar.items.Count-itemCounter).ToString() + "/" + saveVar.items.Count.ToString();
+        text.text =(saveVar.items.Count-itemCounter).ToString() + "/" + saveVar.items.Count.ToString();
     }
 }

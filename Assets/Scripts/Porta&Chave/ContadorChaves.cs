@@ -17,6 +17,6 @@ public class ContadorChaves : MonoBehaviour
 
     void Update()
     {
-        text.text = "Numero de chaves pegos: " + sistemaChave.nChavesPegos.ToString();
+        text.text = sistemaChave.nChavesPegos.ToString();
     }
 }

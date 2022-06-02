@@ -14,49 +14,42 @@ public class PortaChave : MonoBehaviour
     [HideInInspector] public int nChavesPegos = 0; //numero de chaves pegos
 
     //Componentes Porta
+    [Header("Velocidade de abrir")]
+    public float speed;
+    [Header("Orientacao da Porta")]
+    public bool paraCima;
+
     private GameObject porta;
-    Animator animator;
-    AnimatorStateInfo stateInfo;
+    private Rigidbody2D body;
 
 
     void Start()
     {
         //pega componentes da porta(precisa estar com nome "Porta")
         porta = transform.Find("Porta").gameObject;
-        animator = porta.GetComponent<Animator>();
-        stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        body = porta.GetComponent<Rigidbody2D>();
     }
 
 
     private bool isAbrindo = false; //true se a porta ta abrindo
-    private bool isAcabouAbrir = false; //ve se acabou a animacao "Abrindo"
     void FixedUpdate()
     {
-        //se pegar todas as chaves, comeca a animacao de abrir
         if(nChavesPegos == nChaves && !isAbrindo)
         {
+            Debug.Log("a");
             isAbrindo = true;
-            StartCoroutine(WaitAnimation());
-        }
-
-        //ve se acabou a animacao
-        if(isAbrindo)
-        {
-            stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-            isAcabouAbrir = stateInfo.normalizedTime >= 1 && stateInfo.IsName("Abrindo");
+            StartCoroutine(OpenAnimation());
         }
     }
 
 
-    private IEnumerator WaitAnimation()
+    private IEnumerator OpenAnimation()
     {
-        //comeca a animacao do "Abrindo"
-        animator.SetBool("isFechar", true);
-
-        //espera ate acabar a animacao 
-        yield return new WaitWhile(() => !isAcabouAbrir);
-
-        //apaga a porta
+        if (paraCima)
+            body.velocity = new Vector2(0, speed);
+        else
+            body.velocity = new Vector2(0, -speed);
+        yield return new WaitForSeconds(3 / speed);
         porta.SetActive(false);
     }
 }

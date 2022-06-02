@@ -16,10 +16,6 @@ public class Chave : MonoBehaviour
         //pega script PortaChave do parente
         GameObject parente = transform.parent.gameObject;
         portaChave = parente.GetComponent<PortaChave>();
-
-        //debug
-        if (portaChave == null) 
-            Debug.Log("Verifique se tem script PortaChave no parente desse gameObject");
     }
 
 

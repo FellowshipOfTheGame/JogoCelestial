@@ -71,6 +71,11 @@ Itens
 			-Para adicionar mais itens, so duplicar o objeto 'item'
 
 
+GridEspinhos
+	-Descricao
+		-Grid do Tilemap para espinhos
+
+
 Serra
 	-Serra
 		-Parametros

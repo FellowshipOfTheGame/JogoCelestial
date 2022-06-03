@@ -36,7 +36,6 @@ public class PortaChave : MonoBehaviour
     {
         if(nChavesPegos == nChaves && !isAbrindo)
         {
-            Debug.Log("a");
             isAbrindo = true;
             StartCoroutine(OpenAnimation());
         }

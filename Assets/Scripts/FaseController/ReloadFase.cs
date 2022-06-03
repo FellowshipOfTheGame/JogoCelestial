@@ -27,7 +27,7 @@ public class ReloadFase : MonoBehaviour
             fading = true;
             fade.StartFadeOut();
         }
-        if(fade.IsFadeOutComplete())
+        if(fade.IsFadeOutComplete() && fading)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

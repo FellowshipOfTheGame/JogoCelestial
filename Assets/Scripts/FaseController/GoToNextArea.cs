@@ -26,10 +26,9 @@ public class GoToNextArea : MonoBehaviour
         }
 
         //quando termina o fadeOut muda de fase
-        if (fade.IsFadeOutComplete())
+        if (fade.IsFadeOutComplete() && encostou)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            Debug.Log(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

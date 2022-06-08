@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{3676f52a-3d73-43c2-b800-dc9915d851ee}">
+		<property name="assetPath">
+			<value>Ocarina_Trilha_Celestimiau.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>112</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0733e74f-1bbd-4c7d-9eed-8abecead4fa6}</destination>
+		</relationship>
+	</object>
+</objects>

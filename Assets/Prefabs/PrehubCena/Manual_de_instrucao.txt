@@ -1,0 +1,114 @@
+Manual de instrucao dos itens e HUD
+
+
+Nuvem
+	-Parametros
+		-Tempo de desaparecimento do nuvem
+		-Tempo de reaparecimento do nuvem
+
+
+Porta&Chave
+	-Descricao
+		-Tem dois pares porta e chave(azul e vermelho)
+	-Parametros
+		-Numero de chaves
+		-Velocidade de abertura da porta
+		-Orientacao de abertura da porta(true se abrir para cima)
+	-Utilizacao
+		-Para aumentar o numero de chaves, duplicar o objeto Chave e atualizar o parametro 'N chaves'
+		-Para mudar a orientacao da porta, mudar parametro de orientacao e mudar o sprite
+
+
+Canvas
+	-Utilizacao
+		-Colcocar objeto 'Main Camera' no parametro 'Render Camera' do 'Canvas'
+
+	-Save e Load
+		-Descricao
+			-Somente usado para teste(pode tirar se quiser)
+		-Utilizacao
+			-botao de save para salvar o estado atual de itens
+			-botao de load para carregar o estado salvado de itens
+
+	-Contador de itens
+		-Descricao
+			-Conta numero de itens
+
+	-ContChavesAzul
+		-Descricao
+			-Conta numero de chaves azuis
+			-Pode tirar quando nao tem porta azul
+		-Utilizacao
+			-Colocar o objeto Porta&ChaveAzul no parametro 'Sistema Chave'
+
+	-ContChavesVermelho
+		-Descricao
+			-Conta numero de chaves vermelhas
+			-Pode tirar quando nao tem porta vermelha
+		-Utilizacao
+			-Colocar o objeto Porta&ChaveVermelho no parametro 'Sistema Chave'
+
+	-Contador de level
+		-Descricao
+			-Conta numero de level
+
+	-Fade
+
+
+Itens
+	-SceneSaveVariables
+		-Descricao
+			-Cuida do sistema de save do item
+	
+	-Itens
+		-Descricao
+			-Onde estao os itens
+		-Parametros
+			-'Force' - forca para aproximar do Player
+			-'Min Distance' - distancia minima do item ate o player para o item parar
+			-'Max Ground Time' - Tempo que o player precisa ficar no chao para pegar o item
+		-Utlizacao
+			-Para adicionar mais itens, so duplicar o objeto 'item'
+
+
+GridEspinhos
+	-Descricao
+		-Grid do Tilemap para espinhos
+
+
+Serra
+	-Serra
+		-Parametros
+			-'Wait Time' - tempo de espera no canto
+			-'Blade Velocity' - velocidade de movimento
+			-'Direction' - 1 se direcao inicial for cima ou direita
+						 - -1 se direcao inicial for baixo ou esquerda
+			-'Horizontal Direction' - true se a direcao na horizontal
+			-'Rotate Speed' - velocidade de rotacao
+			-'Rotate Direc' - 1 se for rotacao na direcao anti-horaria 
+							- -1 se for rotacao na direcao horaria 
+
+	-Fim da Serra
+		-Utilizacao
+			-Colcocar onde que virar a direcao da serra
+
+
+ObjetosControleFase
+	-ReloadFase
+		-Descriacao
+			-Faz o sistema de reload da fase
+
+	-VerifyScenePass
+		-Descricao
+			-Verifica se ja foi nesta fase
+	
+	-GoNextArea
+		-Descricao
+			-Quando o player acerta neste objeto, o player vai para proxima fase
+
+
+
+
+
+
+

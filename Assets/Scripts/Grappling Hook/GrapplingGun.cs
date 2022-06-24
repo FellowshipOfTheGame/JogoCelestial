@@ -32,6 +32,7 @@ public class GrapplingGun : MonoBehaviour
     [SerializeField, Range(0, 15)] public float maxDistance;
     public bool onDistance;
 
+
     private void Start(){
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
@@ -97,7 +98,6 @@ public class GrapplingGun : MonoBehaviour
             m_springJoint2D.distance = firePointDistanceVector.magnitude;
             m_springJoint2D.frequency = launchSpeed;
             m_springJoint2D.enabled = true;
-        
         }else
             StartCoroutine(Desativar());
         

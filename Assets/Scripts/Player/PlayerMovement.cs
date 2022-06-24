@@ -64,8 +64,17 @@ public class PlayerMovement : MonoBehaviour
 
         //para grudar na parede quando estiver usando o gancho
         if(_onWall && grapplingGun.m_springJoint2D.enabled){
+            animator.SetBool("Puxando", false);
             animator.SetBool("naParede", true);
         }
+
+        //executar a animacao de do player sendo puxado
+        if(m_lineRenderer.enabled && !_onWall)
+            animator.SetBool("Puxando", true);
+        if(!m_lineRenderer.enabled )
+            animator.SetBool("Puxando", false);
+
+        
     }
 
     private void FixedUpdate()

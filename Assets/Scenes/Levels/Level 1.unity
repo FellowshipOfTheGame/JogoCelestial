@@ -8118,6 +8118,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8956342425051989956, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956342425051989956, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 537cba640f72d8f49bbf84f2af16dbbf, type: 2}
+    - target: {fileID: 8956342425051989956, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8956342425999266071, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
       propertyPath: m_Name
       value: Player

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private Camera mainCamera;
+    [SerializeField] private MainCamera mainCamera;
 
     [SerializeField] private PlayerMovement movement;
     [SerializeField] private GrapplingGun grapplingGun;
@@ -34,6 +34,13 @@ public class Player : MonoBehaviour
         else if(ctx.canceled)
             grapplingGun.GrappleHookCancel();
         
+    }
+
+    public void OnZoomOut(InputAction.CallbackContext ctx){
+        if(ctx.started)
+            mainCamera.cameraFreeWalk.fieldOfView = mainCamera.zoomOut;
+        else if(ctx.canceled)
+            mainCamera.cameraFreeWalk.fieldOfView = mainCamera.zoomIn;
     }
 
     #endregion

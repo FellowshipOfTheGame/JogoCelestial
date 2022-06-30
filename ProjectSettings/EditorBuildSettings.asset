@@ -23,4 +23,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DamageTest.unity
     guid: 9f3a13b24053eed4b814ff42933c0bc6
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 1605daa82a15a47f8bb4b8f30ca3269c, type: 2}

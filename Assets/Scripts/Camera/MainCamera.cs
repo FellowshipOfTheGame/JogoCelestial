@@ -11,7 +11,6 @@ public class MainCamera : MonoBehaviour
     public float minimoY;
 
     [Header("Zoom:")]
-    [SerializeField]
     public Camera cameraFreeWalk;
     public float zoomIn;
     public float zoomOut;

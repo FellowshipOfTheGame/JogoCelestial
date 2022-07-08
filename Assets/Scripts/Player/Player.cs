@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     }
 
     public void OnGrappleHook(InputAction.CallbackContext ctx){
-        if (ctx.started)
+        if (ctx.started && !movement._isDead)
             grapplingGun.GrappleHook();
         else if(ctx.canceled)
             grapplingGun.GrappleHookCancel();

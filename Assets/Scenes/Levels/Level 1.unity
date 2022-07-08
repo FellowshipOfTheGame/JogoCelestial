@@ -3558,8 +3558,8 @@ MonoBehaviour:
   maximoY: 400
   minimoY: -10
   cameraFreeWalk: {fileID: 1003575910}
-  zoomIn: 15
-  zoomOut: 30
+  zoomIn: 30
+  zoomOut: 50
   Player: {fileID: 1817060094}
 --- !u!1001 &1006466835
 PrefabInstance:

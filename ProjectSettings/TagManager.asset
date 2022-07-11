@@ -40,12 +40,27 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fade
+    uniqueID: 3143385141
+    locked: 0
+  - name: BackGround
+    uniqueID: 3833538289
+    locked: 0
+  - name: BackGroundGrid
+    uniqueID: 2001719915
+    locked: 0
+  - name: BeforeGround
+    uniqueID: 2966683119
+    locked: 0
+  - name: Ground
+    uniqueID: 668992875
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: AfterGround
+    uniqueID: 2688251891
+    locked: 0
   - name: UI
     uniqueID: 1390803565
-    locked: 0
-  - name: Fade
-    uniqueID: 3143385141
     locked: 0

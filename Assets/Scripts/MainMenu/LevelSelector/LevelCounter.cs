@@ -9,7 +9,7 @@ public class LevelCounter : MonoBehaviour
     private Text text;
     void Start()
     {
-        text.GetComponent<Text>();
+        text = GetComponent<Text>();
         text.text = "Level " + (SceneManager.GetActiveScene().buildIndex);
     }
 }

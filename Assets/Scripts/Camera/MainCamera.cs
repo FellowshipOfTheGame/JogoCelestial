@@ -25,8 +25,12 @@ public class MainCamera : MonoBehaviour
     }
 
     // Update is called once per frame
+    static float x = 5.25f;
+    static float y = 10.25f;
     void Update()
     {
-        transform.position = new Vector3(Mathf.Clamp(Player.position.x, minimoX, maximoX), Mathf.Clamp(Player.position.y, minimoY, maximoY), transform.position.z);
+        float fieldX = cameraFreeWalk.fieldOfView / x;
+        float fieldY = cameraFreeWalk.fieldOfView / y;
+        transform.position = new Vector3(Mathf.Clamp(Player.position.x, minimoX + fieldX, maximoX - fieldX), Mathf.Clamp(Player.position.y, minimoY + fieldY, maximoY - fieldY), transform.position.z);
     }
 }

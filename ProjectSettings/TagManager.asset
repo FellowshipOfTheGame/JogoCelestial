@@ -61,6 +61,9 @@ TagManager:
   - name: AfterGround
     uniqueID: 2688251891
     locked: 0
+  - name: AfterPlayer
+    uniqueID: 1669119149
+    locked: 0
   - name: UI
     uniqueID: 1390803565
     locked: 0

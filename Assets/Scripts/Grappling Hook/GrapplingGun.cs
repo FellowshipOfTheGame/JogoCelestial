@@ -31,11 +31,19 @@ public class GrapplingGun : MonoBehaviour
     [Header("Max Distance:")]
     [SerializeField, Range(0, 15)] public float maxDistance;
     public bool onDistance;
+    [HideInInspector] public bool haveGrapple = false;
+    [HideInInspector] public string haveGrappleKey = "haveGrapple";
 
 
     private void Start(){
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
+
+        //carrega se tem grapple ou nao
+        if(PlayerPrefs.GetInt(haveGrappleKey, 0) == 0)
+            haveGrapple = false;
+        else
+            haveGrapple = true;
     }
 
     private void Update(){

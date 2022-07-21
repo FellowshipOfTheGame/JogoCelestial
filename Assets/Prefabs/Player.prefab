@@ -139,7 +139,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 537cba640f72d8f49bbf84f2af16dbbf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -159,7 +159,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -372,6 +372,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8cff9ce7-4a0d-4dc5-af61-6a7a3d9daa28
     m_ActionName: Gameplay/GrappleHook[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8956342425999266159}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnZoomOut
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 31b22bf1-2515-475a-846e-6651d759aa32
+    m_ActionName: Gameplay/ZoomOut[/Keyboard/z]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -522,8 +538,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1606715405
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 8793639957104055765, guid: 7ff3d5b95a827314ab4006fde8ff5e1d, type: 3}
   m_Color: {r: 0.9669811, g: 1, b: 0.9766139, a: 1}

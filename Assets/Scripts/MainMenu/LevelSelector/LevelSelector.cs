@@ -60,6 +60,11 @@ public class LevelSelector : MonoBehaviour
 
                 Text buttonText = button.transform.GetChild(0).gameObject.GetComponent<Text>();
                 buttonText.text = "Level " + levelCounter;
+                if(levelsPassed < levelCounter)
+                {
+                    buttonText.color = new Color(0, 0, 0, 0.5f);
+                    button.GetComponent<ButtonSc>().enabled = false;
+                }
 
                 LevelButton lb = button.GetComponent<LevelButton>();
                 lb.LevelNumber = levelCounter;

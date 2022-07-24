@@ -8346,6 +8346,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3099948157032850759, guid: 1e440a5c9c04dd345a1fe396d345ebf1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -121.26
+      objectReference: {fileID: 0}
     - target: {fileID: 3099948157164818891, guid: 1e440a5c9c04dd345a1fe396d345ebf1, type: 3}
       propertyPath: m_Name
       value: TextCanvas

@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (_isDead) return;
+
         // Decrease timers
         if (_jumpGraceTimer > 0)
         {
@@ -107,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         else { animator.SetBool("naParede", false); } // ANIMAÇÃO da parede fica false
 
 
-    Move();
+        Move();
 
         ///////////// ANIMA��ES\\\\\\\\\\\\\
 

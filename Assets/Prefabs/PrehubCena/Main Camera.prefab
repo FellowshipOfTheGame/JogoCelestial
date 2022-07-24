@@ -122,6 +122,6 @@ MonoBehaviour:
   maximoY: 14
   minimoY: -6.5
   cameraFreeWalk: {fileID: 429107536560225304}
-  zoomIn: 30
-  zoomOut: 50
+  zoomIn: 50
+  zoomOut: 80
   Player: {fileID: 0}

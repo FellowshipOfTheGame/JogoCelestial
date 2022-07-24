@@ -106,7 +106,8 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -slideSpeed);
             animator.SetBool("naParede", true); // ANIMAÇÃO da parede fica true
         }
-        else { animator.SetBool("naParede", false); } // ANIMAÇÃO da parede fica false
+        else {
+            animator.SetBool("naParede", false); } // ANIMAÇÃO da parede fica false
 
 
         Move();

@@ -17,13 +17,13 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext ctx)
     {
-        if(!rope.isGrappling)
+        if(!rope.isGrappling && !movement._isDead)
             movement.Move(ctx.ReadValue<float>());
     }
 
     public void OnJump(InputAction.CallbackContext ctx)
     {
-        if (ctx.performed) movement.Jump();
+        if (ctx.performed && !movement._isDead) movement.Jump();
 
         //if (ctx.canceled) movement.JumpCanceled();
     }
@@ -37,9 +37,9 @@ public class Player : MonoBehaviour
     }
 
     public void OnZoomOut(InputAction.CallbackContext ctx){
-        if(ctx.started)
+        if(ctx.started && !movement._isDead)
             mainCamera.cameraFreeWalk.fieldOfView = mainCamera.zoomOut;
-        else if(ctx.canceled)
+        else if(ctx.canceled && !movement._isDead)
             mainCamera.cameraFreeWalk.fieldOfView = mainCamera.zoomIn;
     }
 

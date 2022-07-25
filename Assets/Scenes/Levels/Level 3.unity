@@ -15584,10 +15584,10 @@ MonoBehaviour:
   maximoX: 13
   minimoX: -9
   maximoY: 6.5
-  minimoY: -6.5
+  minimoY: -5.5
   cameraFreeWalk: {fileID: 1922888544}
-  zoomIn: 30
-  zoomOut: 50
+  zoomIn: 50
+  zoomOut: 55
   Player: {fileID: 77610402}
 --- !u!114 &1922888542
 MonoBehaviour:

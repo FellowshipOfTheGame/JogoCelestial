@@ -21,6 +21,7 @@ public class PortaChave : MonoBehaviour
 
     private GameObject porta;
     private Rigidbody2D body;
+    private SpriteRenderer sprite;
 
 
     void Start()
@@ -28,13 +29,15 @@ public class PortaChave : MonoBehaviour
         //pega componentes da porta(precisa estar com nome "Porta")
         porta = transform.Find("Porta").gameObject;
         body = porta.GetComponent<Rigidbody2D>();
+        sprite = porta.GetComponent<SpriteRenderer>();
+
     }
 
 
     private bool isAbrindo = false; //true se a porta ta abrindo
     void FixedUpdate()
     {
-        if(nChavesPegos == nChaves && !isAbrindo)
+        if(nChavesPegos == nChaves && !isAbrindo && sprite.isVisible)
         {
             isAbrindo = true;
             StartCoroutine(OpenAnimation());

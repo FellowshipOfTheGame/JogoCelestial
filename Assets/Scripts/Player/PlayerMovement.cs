@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("caindo", estaCaindo);
 
         //aterrizagem\\
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("caindo") && _onGround)
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("caindo") && _onGround && !_isDead)
         {
             animator.Play("aterrizagem");
         }
@@ -260,9 +260,10 @@ public class PlayerMovement : MonoBehaviour
     public float wallJumpAnimSec;
     private IEnumerator WallJumpAnimation()
     {
-        animator.Play("wallJump");
+
+        if (!_isDead) animator.Play("wallJump");
         yield return new WaitForSeconds(wallJumpAnimSec);
-        animator.Play("subindo");
+        if (!_isDead) animator.Play("subindo");
     }
 
 

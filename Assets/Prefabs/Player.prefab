@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 8956342425999266066}
   - component: {fileID: 8956342425999266065}
   - component: {fileID: 8956342425999266064}
+  - component: {fileID: 1154580445331760499}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -591,6 +592,18 @@ SpringJoint2D:
   m_Distance: 15.049691
   m_DampingRatio: 0
   m_Frequency: 1
+--- !u!114 &1154580445331760499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956342425999266071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1af36b422149a5439404c5863032710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8956342426150401261
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ public class ReloadFase : MonoBehaviour
             if( GameManager.gm.health>0)
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             else
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("Assets/Scenes/Levels/TelaGameOver.unity");
         }
     }
 }

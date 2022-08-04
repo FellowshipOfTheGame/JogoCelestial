@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     private bool isFading = false;
     public GameObject pauseGame;
     public bool isPaused;
+    public bool isBackToMenu = false;
 
     [SerializeField] private GameObject OptionMenu;
 
@@ -28,7 +29,10 @@ public class MainMenu : MonoBehaviour
         }
         if (startFade && fade.IsFadeOutComplete())
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(!isBackToMenu)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            else
+                SceneManager.LoadScene(0);
         }
     }
 
@@ -57,7 +61,8 @@ public class MainMenu : MonoBehaviour
     }
 
     public void backToMainMenu(){
-        SceneManager.LoadScene(0);
+        startFade = true;
+        isBackToMenu = true;
     }
 
     public void Quit()

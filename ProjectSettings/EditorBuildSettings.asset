@@ -38,5 +38,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Nivel 6.unity
     guid: f3879701b88144eb6874a02b4ed084d3
+  - enabled: 1
+    path: Assets/Scenes/Levels/TelaVitoria.unity
+    guid: 5e79d2463ea5d0a4d89f2c1d76567827
+  - enabled: 1
+    path: Assets/Scenes/Levels/TelaGameOver.unity
+    guid: 6ab012518967a82409ba3a7ccbdb9dd9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 1605daa82a15a47f8bb4b8f30ca3269c, type: 2}

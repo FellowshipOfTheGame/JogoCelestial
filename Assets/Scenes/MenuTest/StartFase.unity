@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ca78e1c4bc2ee24bab38e2118bb0c2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstFadeInComp: 1
+  firstFadeInComp: 0
 --- !u!1 &167296953
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,7 +4555,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 12.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &861200617
@@ -5830,6 +5830,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b908ec0ece4ab33429da42dc0a593997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseGame: {fileID: 0}
+  isPaused: 0
+  isBackToMenu: 0
+  OptionMenu: {fileID: 0}
 --- !u!1 &1860573299
 GameObject:
   m_ObjectHideFlags: 0
@@ -10596,10 +10600,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87269bf22a44df847bfe0ff38853b949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCount: 9
+  levelCount: 10
   ButtonPrehub: {fileID: 1860573299}
   maxXButton: 4
-  maxYButton: 3
+  maxYButton: 4
   XDeslocation: 4
   YDeslocation: 1
 --- !u!1 &2128351393

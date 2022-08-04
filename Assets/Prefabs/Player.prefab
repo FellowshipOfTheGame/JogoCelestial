@@ -87,6 +87,8 @@ MonoBehaviour:
   grappleDistanceVector: {x: 0, y: 0}
   maxDistance: 3
   onDistance: 0
+  haveGrapple: 0
+  haveGrappleKey: haveGrapple
 --- !u!1 &8956342425051989963
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +390,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 31b22bf1-2515-475a-846e-6651d759aa32
     m_ActionName: Gameplay/ZoomOut[/Keyboard/z]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8956342425999266159}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7fa4437e-50c1-4e63-ae02-1aef49f782b8
+    m_ActionName: Gameplay/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -409,6 +427,8 @@ MonoBehaviour:
   movement: {fileID: 8956342425999266158}
   grapplingGun: {fileID: 8956342424958785188}
   rope: {fileID: 8956342425051989958}
+  menu: {fileID: 0}
+  isPaused: 0
 --- !u!114 &8956342425999266158
 MonoBehaviour:
   m_ObjectHideFlags: 0

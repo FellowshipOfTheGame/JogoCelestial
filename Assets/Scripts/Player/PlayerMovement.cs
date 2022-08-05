@@ -105,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, -slideSpeed);
             animator.SetBool("naParede", true); // ANIMAÇÃO da parede fica true
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jogo Celestial/SFX/wallsliding");
         }
         else {
             animator.SetBool("naParede", false); } // ANIMAÇÃO da parede fica false
@@ -130,10 +131,12 @@ public class PlayerMovement : MonoBehaviour
         bool estaCaindo = _rigidbody.velocity.y < -6f;
         animator.SetBool("caindo", estaCaindo);
 
+        
         //aterrizagem\\
         if(animator.GetCurrentAnimatorStateInfo(0).IsName("caindo") && _onGround && !_isDead)
         {
             animator.Play("aterrizagem");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jogo Celestial/SFX/landing");
         }
     }
 
@@ -236,6 +239,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (ConsumeJump())
         {
+            if(_onGround == false)
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Jogo Celestial/SFX/doublejumping");
+            }
+            else
+            {
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Jogo Celestial/SFX/jumping");
+            }
             _onGround = false;
             Jump(Vector2.up * jumpForce);
         }

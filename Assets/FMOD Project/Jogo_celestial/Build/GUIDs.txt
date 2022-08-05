@@ -1,0 +1,16 @@
+{7b2c1adf-ccd1-4210-b171-51227cce7bde} bank:/Master
+{e3313a0b-bdaa-0e52-3738-dbdc8d3d7d46} bank:/Master.strings
+{5df21ba5-647e-402d-b8f5-dacf9c3ebd64} bus:/
+{6c8c8770-9188-410c-a35a-cf622ea2b302} bus:/Reverb
+{aea72d1c-bafe-4c18-85e7-c7704d9ad01e} event:/Jogo Celestial/SFX/death
+{75b21fa5-65e3-4ee9-b573-63f3eba48109} event:/Jogo Celestial/SFX/doublejumping
+{2124a497-11b5-4921-879b-89b502b06363} event:/Jogo Celestial/SFX/hookshotsound
+{b25092e0-9f40-46a4-8bb7-0378358e14d9} event:/Jogo Celestial/SFX/jumping
+{4a03dad8-8705-480d-925b-aeadf90fb93d} event:/Jogo Celestial/SFX/landing
+{30786230-2f36-49c5-9c6a-c89a1421b1da} event:/Jogo Celestial/SFX/walking
+{a301a204-32c1-4572-b36c-466cb3613715} event:/Jogo Celestial/SFX/wallsliding
+{8ef00ae1-0ca4-4f9d-b8aa-6e3babda1d09} event:/Jogo Celestial/Trilha/Trilha_Celestimiau
+{bd312ec7-6b4c-4ae6-ac07-610b985fc842} event:/Jogo Celestial/Trilha/Trilha_Celestimiau2D
+{c8b50333-430d-4b3c-8125-4f8f01635d94} event:/Jogo Celestial/Trilha_dinamica/Trilha_dinamica
+{0abe74a6-3f44-4e81-9709-0b1db46a86ea} parameter:/Speed
+{89255daa-cb2e-494e-a081-0fced65b29c3} parameter:/grip

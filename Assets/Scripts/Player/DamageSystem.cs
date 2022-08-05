@@ -37,9 +37,11 @@ public class DamageSystem : MonoBehaviour
         {
             GameManager.gm.health -=1;
             Debug.Log("Vida Restante: " + GameManager.gm.health);
+
             plMove._isDead = true;
             isDying = true;
             anime.Play("death");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Jogo Celestial/SFX/death");
         }
     }
 }

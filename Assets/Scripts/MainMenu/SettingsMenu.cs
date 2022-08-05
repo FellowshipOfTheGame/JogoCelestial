@@ -6,17 +6,21 @@ using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour
 {
-    //volume
-    public AudioMixer audioMixer;
-   public float volumeMaster;
-   public float volumeFX;
-   public float volumeMusic;
+    [Header("Audio:")]
+    public float volumeMaster;
+    public float volumeFX;
+    public float volumeMusic;
+    public Slider Music;
+    public Slider Effects;
+    public Slider Master;
 
-    //resolucao
+    [Header("Resolution:")]
     Resolution[] resolutions;
     public Dropdown resolutionDropdown;
 
+    
     private void Start(){
+        
         //limpar o botao Dropdown
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
@@ -40,27 +44,32 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    void Update(){
+        //alterar o valor do slider de musica e efeitos sonoros, quando o volumeMaster mudar
+        Music.value = volumeMusic;
+        Effects.value = volumeFX;
+
+        if(volumeMusic == volumeFX)
+            Master.value = volumeMusic;
+    }
+
     //configura o volume de todos os sons do jogo
     public void VolumeMaster(float volume){
         volumeMaster = volume;
-        AudioListener.volume = volumeMaster;
         
+        //alterar o volume da trilha sonora e efeitos
+        volumeFX = volume;
+        volumeMusic = volume;
     }
 
     //configura o volume dos efeitos sonoros do jogo
     public void VolumeFX(float volume){
         volumeFX = volume;
-        GameObject[] Fxs = GameObject.FindGameObjectsWithTag("FX");
-        for(int i = 0; i<Fxs.Length; i++)
-            Fxs[i].GetComponent<AudioSource>().volume = volumeFX;
     }
 
     //configura o volume das musicas do jogo
     public void VolumeMusic(float volume){
         volumeMusic = volume;
-        GameObject[] musics = GameObject.FindGameObjectsWithTag("Music");
-        for(int i = 0; i<musics.Length; i++)
-            musics[i].GetComponent<AudioSource>().volume = volumeMusic;
     }
 
     //mudar qualidade grafica

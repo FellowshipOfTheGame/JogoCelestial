@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &144597954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7324492570533777709, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
+  m_PrefabInstance: {fileID: 6657050805311324075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfaf0cfa379eb2498f55331cda829fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &279120154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,62 +144,6 @@ PrefabInstance:
     - target: {fileID: 8956342425999266071, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
-      value: 7fa4437e-50c1-4e63-ae02-1aef49f782b8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
-      value: Gameplay/Pause[/Keyboard/escape]
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 964285673}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_DeviceLostEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 964285681}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPause
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Player, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956342425999266152, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8956342425999266153, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
       propertyPath: m_RootOrder
@@ -234,6 +189,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8956342425999266158, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 144597954}
     - target: {fileID: 8956342425999266159, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
       propertyPath: menu
       value: 
@@ -304,6 +263,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 144597954}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
 --- !u!1 &638495439
@@ -3051,22 +3014,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &964285673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8956342425999266071, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-  m_PrefabInstance: {fileID: 279120154}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &964285681 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8956342425999266159, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
-  m_PrefabInstance: {fileID: 279120154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964285673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00fc61a88b974efabe214b41e8f3584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1014104823
 GameObject:
   m_ObjectHideFlags: 0
@@ -7284,9 +7231,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2024064092}
   - component: {fileID: 2024064091}
-  - component: {fileID: 2024064090}
   - component: {fileID: 2024064089}
   - component: {fileID: 2024064088}
+  - component: {fileID: 2024064090}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7334,14 +7281,19 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!81 &2024064090
-AudioListener:
+--- !u!114 &2024064090
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024064087}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!20 &2024064091
 Camera:
   m_ObjectHideFlags: 0

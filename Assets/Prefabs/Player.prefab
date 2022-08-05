@@ -458,6 +458,7 @@ MonoBehaviour:
   terrainDetectionCount: 3
   grapplingGun: {fileID: 8956342424958785188}
   m_lineRenderer: {fileID: 8956342425051989956}
+  sound: {fileID: 0}
   _onGround: 0
   _isDead: 0
   wallJumpAnimSec: 0.25

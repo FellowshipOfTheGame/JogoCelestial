@@ -381,7 +381,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657050804373846224}
+      - m_Target: {fileID: 7324492570533777709}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: VolumeFX
         m_Mode: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657050804373846224}
+      - m_Target: {fileID: 7324492570533777709}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: VolumeMaster
         m_Mode: 0
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657050804373846224}
+      - m_Target: {fileID: 7324492570533777709}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: VolumeMusic
         m_Mode: 0
@@ -2530,7 +2530,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657050804373846224}
+      - m_Target: {fileID: 7324492570533777709}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetQuality
         m_Mode: 0
@@ -4585,7 +4585,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657050804373846224}
+      - m_Target: {fileID: 7324492570533777709}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetFullscreen
         m_Mode: 0
@@ -4815,7 +4815,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657050804373846224}
+      - m_Target: {fileID: 7324492570533777709}
         m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
@@ -5336,11 +5336,11 @@ GameObject:
   - component: {fileID: 6657050804373846227}
   - component: {fileID: 6657050804373846236}
   - component: {fileID: 6657050804373846237}
-  - component: {fileID: 6657050804373846224}
   - component: {fileID: 6657050804373846225}
+  - component: {fileID: 7324492570533777709}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5433,23 +5433,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6657050804373846224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657050804373846238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfaf0cfa379eb2498f55331cda829fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
-  volumeMaster: 0
-  volumeFX: 0
-  volumeMusic: 0
-  resolutionDropdown: {fileID: 5045036632737259227}
 --- !u!114 &6657050804373846225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5466,6 +5449,25 @@ MonoBehaviour:
   isPaused: 0
   isBackToMenu: 0
   OptionMenu: {fileID: 2672604161060147550}
+--- !u!114 &7324492570533777709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657050804373846238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfaf0cfa379eb2498f55331cda829fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeMaster: 1
+  volumeFX: 1
+  volumeMusic: 1
+  Music: {fileID: 3798830642514397391}
+  Effects: {fileID: 3798830642033123494}
+  Master: {fileID: 3798830642130234961}
+  resolutionDropdown: {fileID: 5045036632737259227}
 --- !u!1 &6657050804803514451
 GameObject:
   m_ObjectHideFlags: 0

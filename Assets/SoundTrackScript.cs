@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 public class SoundTrackScript : MonoBehaviour
 {
 
-    private FMOD.Studio.EventInstance gameSoundtrack;
-    private FMOD.Studio.EventInstance menuSoundtrack;
+    public FMOD.Studio.EventInstance gameSoundtrack;
+    public FMOD.Studio.EventInstance menuSoundtrack;
     public string menuScenePath;
     public string menuSceneName;
 
     private string sceneName;
+
+    public SettingsMenu menu;
 
     // Start is called before the first frame update
     public void Start()
@@ -35,6 +37,8 @@ public class SoundTrackScript : MonoBehaviour
     void Update()
     {
         CheckSoundtrackChange();
+        gameSoundtrack.setVolume(menu.volumeMusic);
+        menuSoundtrack.setVolume(menu.volumeMusic);
     }
 
 
@@ -43,14 +47,14 @@ public class SoundTrackScript : MonoBehaviour
         var currentScene = SceneManager.GetActiveScene();
         var currentScenename = currentScene.name;
         if (!string.Equals(currentScenename, sceneName)){
-            //se está saindo do menu, troca para a trilha do jogo
+            //se estï¿½ saindo do menu, troca para a trilha do jogo
             if(string.Equals("StartFase(Test)", sceneName))
             {
                 Debug.Log("Saiu do Menu!");
                 menuSoundtrack.setPaused(true);
                 gameSoundtrack.setPaused(false);
             }
-            //se está voltando para o menu, troca para a trilha do menu
+            //se estï¿½ voltando para o menu, troca para a trilha do menu
             else if(string.Equals("StartFase(Test)", currentScenename))
             {
                 Debug.Log("Voltou para o menu!");

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DamageArea
   - FimDaSerra
+  - Music
+  - Canvas
   layers:
   - Default
   - TransparentFX

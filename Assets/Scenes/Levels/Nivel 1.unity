@@ -575,6 +575,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
+--- !u!114 &912967503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7324492570533777709, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
+  m_PrefabInstance: {fileID: 912967502}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfaf0cfa379eb2498f55331cda829fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &932989353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,6 +981,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8956342425999266158, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 912967503}
     - target: {fileID: 8956342425999266159, guid: db696d80ac8bc3e49b3ab84a20b08ee7, type: 3}
       propertyPath: menu
       value: 
@@ -17896,6 +17911,10 @@ PrefabInstance:
     - target: {fileID: 223383641583360727, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
       propertyPath: m_Name
       value: Game Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: menu
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}

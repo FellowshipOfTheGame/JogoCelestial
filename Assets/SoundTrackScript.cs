@@ -13,7 +13,10 @@ public class SoundTrackScript : MonoBehaviour
 
     private string sceneName;
 
-    public SettingsMenu menu;
+    public GameObject menu;
+    public float Master;
+    public float Music;
+    public float FX;
 
     // Start is called before the first frame update
     public void Start()
@@ -35,10 +38,16 @@ public class SoundTrackScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        //atualizar e armazenar os valores para os sons
+        menu = GameObject.FindWithTag ("Canvas");
+        FX = menu.transform.GetComponent<SettingsMenu>().volumeFX;
+        Music = menu.transform.GetComponent<SettingsMenu>().volumeMusic;
+        Master = menu.transform.GetComponent<SettingsMenu>().volumeMaster;
+        
         CheckSoundtrackChange();
-        gameSoundtrack.setVolume(menu.volumeMusic);
-        menuSoundtrack.setVolume(menu.volumeMusic);
+        gameSoundtrack.setVolume(Music);
+        menuSoundtrack.setVolume(Music);
     }
 
 

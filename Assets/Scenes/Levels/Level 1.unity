@@ -264,9 +264,17 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
-      propertyPath: menu
-      value: 
-      objectReference: {fileID: 144597954}
+      propertyPath: FX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: Music
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: Master
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
 --- !u!1 &638495439
@@ -7677,6 +7685,18 @@ PrefabInstance:
     - target: {fileID: 6657050804373846238, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324492570533777709, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
+      propertyPath: volumeFX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324492570533777709, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
+      propertyPath: volumeMusic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324492570533777709, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
+      propertyPath: volumeMaster
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}

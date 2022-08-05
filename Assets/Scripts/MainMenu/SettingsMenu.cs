@@ -13,6 +13,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider Music;
     public Slider Effects;
     public Slider Master;
+    private GameObject gameManager;
 
     [Header("Resolution:")]
     Resolution[] resolutions;
@@ -21,6 +22,12 @@ public class SettingsMenu : MonoBehaviour
     
     private void Start(){
         
+        //iniciar volume de acordo com a ultima configuracao de som
+        gameManager = GameObject.FindWithTag ("GM");
+        volumeFX = gameManager.transform.GetComponent<SoundTrackScript>().FX;
+        volumeMusic = gameManager.transform.GetComponent<SoundTrackScript>().Music;
+        volumeMaster = gameManager.transform.GetComponent<SoundTrackScript>().Master;
+         
         //limpar o botao Dropdown
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();

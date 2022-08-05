@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6050312581150440545}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,3 +60,6 @@ MonoBehaviour:
   menuScenePath: 
   menuSceneName: 
   menu: {fileID: 0}
+  Master: 0
+  Music: 0
+  FX: 0

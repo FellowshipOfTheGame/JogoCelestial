@@ -8,6 +8,7 @@ TagManager:
   - FimDaSerra
   - Music
   - Canvas
+  - GM
   layers:
   - Default
   - TransparentFX

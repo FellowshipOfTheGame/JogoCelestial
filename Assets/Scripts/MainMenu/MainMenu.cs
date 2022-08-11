@@ -70,4 +70,11 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    //apaga o numero de fases passados ate agora
+    public void DeleteLevelMemory()
+    {
+        string key = "levelsPassed";
+        PlayerPrefs.DeleteKey(key);
+    }
 }

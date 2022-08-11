@@ -8,17 +8,12 @@ public class ContadorVidaSc : MonoBehaviour
     GameManager gameManager;
     Text text;
 
-    void Start()
+    void Awake()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         if (gameManager == null) Debug.Log("Cannot find game manager");
 
         text = GetComponent<Text>();
-    }
-
-
-    void Awake()
-    {
         text.text = gameManager.health.ToString();
     }
 }

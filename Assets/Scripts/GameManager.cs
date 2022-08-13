@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {   
     public int health;
+    public int coins;
     public static GameManager gm;
     // Start is called before the first frame update
 
@@ -30,7 +31,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(coins >= 10){
+            health++;
+            coins = 0;
+        }
     }
 
 

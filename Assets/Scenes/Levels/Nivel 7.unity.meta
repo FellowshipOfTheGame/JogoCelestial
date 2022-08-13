@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 604f968d2d4764b1ebade5dac7f39304
+=======
+<<<<<<<< HEAD:Assets/Scenes/Levels/Level 1.unity.meta
+guid: ee05138c45994b546be94a22c8cddbfc
+========
+guid: 604f968d2d4764b1ebade5dac7f39304
+>>>>>>>> 8d6a2e4edaca29a2689fed9793a3beb2b01cd8a2:Assets/Scenes/Levels/Nivel 7.unity.meta
+>>>>>>> 8d6a2e4edaca29a2689fed9793a3beb2b01cd8a2
 DefaultImporter:
   externalObjects: {}
   userData: 

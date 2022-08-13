@@ -84,7 +84,9 @@ public class ItemSc : MonoBehaviour
 
     //ve se colidiu com player
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {   
+        GameManager.gm.coins++;
+        Debug.Log("Moedas: " + GameManager.gm.coins);
         string playerTag = "Player";
         if (collision.tag == playerTag)
         {

@@ -179,9 +179,25 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: FX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 1671684409}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: Music
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: Master
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: menuSceneName
+      value: StartFase
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
 --- !u!1 &7193719

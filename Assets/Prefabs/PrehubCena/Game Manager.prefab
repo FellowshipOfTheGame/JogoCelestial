@@ -57,9 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536c2cc6e342fbc47be3efd7a7959d5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuScenePath: 
-  menuSceneName: 
+  menuSceneName: StartFase
   menu: {fileID: 0}
-  Master: 0
-  Music: 0
-  FX: 0
+  Master: 1
+  Music: 1
+  FX: 1

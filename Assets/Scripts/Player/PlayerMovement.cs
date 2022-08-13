@@ -321,6 +321,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //funcao parab conseguir determinar o volume dos efeitos sonoros
     public void PlayOneShot(string path){
         FMOD.Studio.EventInstance soundFX = FMODUnity.RuntimeManager.CreateInstance(path);
         soundFX.setVolume(sound.volumeFX);

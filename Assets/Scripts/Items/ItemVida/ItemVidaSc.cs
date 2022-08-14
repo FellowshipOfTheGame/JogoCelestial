@@ -15,8 +15,6 @@ public class ItemVidaSc : MonoBehaviour
 
             for (int i = 0; i < children.childCount; i++)
             {
-                Debug.Log(children.transform.GetChild(i).gameObject.name);
-                Debug.Log(this.gameObject.name);
                 if (children.transform.GetChild(i).gameObject.name == this.gameObject.name)
                 {
                     string lifeKey = "life" + SceneManager.GetActiveScene().name + i.ToString();

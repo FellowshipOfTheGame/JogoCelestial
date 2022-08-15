@@ -10,33 +10,30 @@ EditorBuildSettings:
     guid: a1fd59ff256227b40a05a1383fc30096
   - enabled: 1
     path: Assets/Scenes/Levels/Nivel 1.unity
-    guid: 748a24d14eb63457e910e9b240dff8d7
+    guid: ee05138c45994b546be94a22c8cddbfc
   - enabled: 1
     path: Assets/Scenes/Levels/Nivel 2.unity
-    guid: 38ace793dc51cd64491672b85d5f1341
+    guid: 748a24d14eb63457e910e9b240dff8d7
   - enabled: 1
     path: Assets/Scenes/Levels/Nivel 3.unity
     guid: 29e1309d0eee20543a0a0bf934e9b8ea
   - enabled: 1
     path: Assets/Scenes/Levels/Nivel 4.unity
-    guid: 0df8d54d5987f491491842d0710d2323
-  - enabled: 1
-    path: Assets/Scenes/Levels/Nivel 5.unity
     guid: df5c27195be967340a4fbb588860451f
   - enabled: 1
-    path: Assets/Scenes/Levels/Nivel 6.unity
+    path: Assets/Scenes/Levels/Nivel 5.unity
     guid: 159219bae9dc3654d94e43f803e7a39e
   - enabled: 1
-    path: Assets/Scenes/Levels/Nivel 7.unity
+    path: Assets/Scenes/Levels/Nivel 6.unity
     guid: 604f968d2d4764b1ebade5dac7f39304
   - enabled: 1
-    path: Assets/Scenes/Levels/Nivel 8.unity
-    guid: d961f08bdb4fb4d3a8fd88eb5efa19eb
+    path: Assets/Scenes/Levels/Nivel 7.unity
+    guid: f4e43029d0f2d6341b69c133921524e2
   - enabled: 1
-    path: Assets/Scenes/Levels/Nivel 9.unity
+    path: Assets/Scenes/Levels/Nivel 8.unity
     guid: cba90d8cf31ca49628203cef32958c4f
   - enabled: 1
-    path: Assets/Scenes/Levels/Nivel 10.unity
+    path: Assets/Scenes/Levels/Nivel 9.unity
     guid: f3879701b88144eb6874a02b4ed084d3
   - enabled: 1
     path: Assets/Scenes/Levels/TelaVitoria.unity

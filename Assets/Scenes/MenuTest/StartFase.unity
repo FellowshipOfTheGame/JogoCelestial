@@ -179,9 +179,25 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: FX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 1671684409}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: Music
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: Master
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050312581150440545, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
+      propertyPath: menuSceneName
+      value: StartFase
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5ac679111f79e041b2bd12b00f7de58, type: 3}
 --- !u!1 &7193719
@@ -10533,10 +10549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87269bf22a44df847bfe0ff38853b949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCount: 10
+  levelCount: 9
   ButtonPrehub: {fileID: 1860573299}
-  maxXButton: 4
-  maxYButton: 4
+  maxXButton: 3
+  maxYButton: 3
   XDeslocation: 4
   YDeslocation: 1
 --- !u!1 &2128351393
@@ -15722,6 +15738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 7
+  coins: 0
 --- !u!4 &7585113785984053200
 Transform:
   m_ObjectHideFlags: 0

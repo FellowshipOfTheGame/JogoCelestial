@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ItemSc : MonoBehaviour
 {
@@ -9,17 +10,9 @@ public class ItemSc : MonoBehaviour
     public float minDistance; //distancia para nao colocar mais forca no item
     public float maxGroundTime; //tempo que precisa ficar no chao para conseguir pegar o item
 
-
     //private
     private bool isFollowPlayer = false;
     private float groundTime = 0.0f;
-
-
-
-    //componentes
-    GameObject saveSystem;
-    string saveSystemName = "SceneSaveSystem";
-    SceneSaveVariables saveSc;
 
     GameObject player;
     string playerName = "Player";
@@ -31,11 +24,6 @@ public class ItemSc : MonoBehaviour
     
     void Start()
     {
-        //pega componentes
-        //saveSystem
-        saveSystem = GameObject.Find(saveSystemName);
-        saveSc = saveSystem.GetComponent<SceneSaveVariables>();
-
         //player
         player = GameObject.Find(playerName);
         playerSc = player.GetComponent<PlayerMovement>();
@@ -73,9 +61,22 @@ public class ItemSc : MonoBehaviour
             //sistema de pegar o item
             if(groundTime >= maxGroundTime)
             {
+                
                 isFollowPlayer = false;
                 this.gameObject.SetActive(false);
-                saveSc.SaveScene();
+                GameManager.gm.coins++;
+
+                Transform children = this.transform.parent.GetComponentInChildren<Transform>();
+                for (int i = 0; i < children.childCount; i++)
+                {
+                    if (children.transform.GetChild(i).gameObject.name == this.gameObject.name)
+                    {
+                        string coinKey = "coin" + SceneManager.GetActiveScene().name + i.ToString();
+                        PlayerPrefs.SetInt(coinKey, 0);
+                    }
+                }
+                
+                
             }
         }
     }
@@ -85,8 +86,6 @@ public class ItemSc : MonoBehaviour
     //ve se colidiu com player
     private void OnTriggerEnter2D(Collider2D collision)
     {   
-        GameManager.gm.coins++;
-        Debug.Log("Moedas: " + GameManager.gm.coins);
         string playerTag = "Player";
         if (collision.tag == playerTag)
         {

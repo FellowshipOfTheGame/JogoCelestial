@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SoundTrackScript : MonoBehaviour
 {
-
-    public FMOD.Studio.EventInstance gameSoundtrack;
-    public FMOD.Studio.EventInstance menuSoundtrack;
-    public string menuScenePath;
-    public string menuSceneName;
-
+    private FMOD.Studio.EventInstance gameSoundtrack;
+    private FMOD.Studio.EventInstance menuSoundtrack;
     private string sceneName;
+    
 
+
+    public string menuSceneName;
     public GameObject menu;
     public float Master;
     public float Music;
@@ -21,7 +20,7 @@ public class SoundTrackScript : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        sceneName = "Level 1";
+        sceneName = menuSceneName;
         gameSoundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo Celestial/Trilha/Trilha_Celestimiau2D");
         menuSoundtrack = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo Celestial/Trilha/Menu_Celestimiau");
         menuSoundtrack.start();
@@ -32,8 +31,6 @@ public class SoundTrackScript : MonoBehaviour
         gameSoundtrack.setPaused(true);
         
         menuSoundtrack.setPaused(false);
-
-        Debug.Log("comecooouuuu");
     }
 
     // Update is called once per frame
@@ -57,14 +54,14 @@ public class SoundTrackScript : MonoBehaviour
         var currentScenename = currentScene.name;
         if (!string.Equals(currentScenename, sceneName)){
             //se est� saindo do menu, troca para a trilha do jogo
-            if(string.Equals("StartFase(Test)", sceneName))
+            if(string.Equals(menuSceneName, sceneName))
             {
                 Debug.Log("Saiu do Menu!");
                 menuSoundtrack.setPaused(true);
                 gameSoundtrack.setPaused(false);
             }
             //se est� voltando para o menu, troca para a trilha do menu
-            else if(string.Equals("StartFase(Test)", currentScenename))
+            else if(string.Equals(menuSceneName, currentScenename))
             {
                 Debug.Log("Voltou para o menu!");
                 gameSoundtrack.setPaused(true);

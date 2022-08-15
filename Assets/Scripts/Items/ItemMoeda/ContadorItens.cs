@@ -6,26 +6,34 @@ using UnityEngine.UI;
 public class ContadorItens : MonoBehaviour
 {
     private Text text = null;
-    private SceneSaveVariables saveVar;
+    private GameObject item;
+    Transform coinChildren;
 
     void Start()
     {
         text = GetComponent<Text>();
-        
-        GameObject saveSys = GameObject.Find("SceneSaveSystem");
-        saveVar = saveSys.GetComponent<SceneSaveVariables>();
+        item = GameObject.Find("Items");
+        coinChildren = item.GetComponentInChildren < Transform > ();
     }
 
 
     void Update()
     {
-        int itemCounter = 0;
-        foreach(GameObject itemI in saveVar.items)
+        //old version
+        /*int coinCounter = 0;
+
+         
+        for(int j = 0; j < coinChildren.childCount; j++)
         {
-            if (itemI.activeSelf)
-                itemCounter++;
+            if(!item.transform.GetChild(j).gameObject.active)
+            {
+                coinCounter++;
+            }
         }
-        
-        text.text =(saveVar.items.Count-itemCounter).ToString() + "/" + saveVar.items.Count.ToString();
+
+        text.text =(coinCounter + "/" + coinChildren.childCount);*/
+
+        //new version
+        text.text = (GameManager.gm.coins + "/" + "10");
     }
 }

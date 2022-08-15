@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour
 {
+    FMOD.Studio.EventInstance hookshotSound;
     [Header("Scripts Ref:")]
     public GrapplingRope grappleRope;
 
@@ -36,11 +37,12 @@ public class GrapplingGun : MonoBehaviour
 
 
     private void Start(){
+
         grappleRope.enabled = false;
         m_springJoint2D.enabled = false;
 
         //carrega se tem grapple ou nao
-        if(PlayerPrefs.GetInt(haveGrappleKey, 0) == 0)
+        if (PlayerPrefs.GetInt(haveGrappleKey, 0) == 0)
             haveGrapple = false;
         else
             haveGrapple = true;
@@ -99,14 +101,19 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
-    public void Grapple(){
-        if(onDistance){
+    public void Grapple() {
+        hookshotSound = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo Celestial/SFX/hookshotsound");
+        hookshotSound.start();
+        hookshotSound.release();
+        if (onDistance){
             m_springJoint2D.connectedAnchor = grapplePoint;
             Vector2 firePointDistanceVector = firePoint.position - gunHolder.position;
             m_springJoint2D.distance = firePointDistanceVector.magnitude;
             m_springJoint2D.frequency = launchSpeed;
             m_springJoint2D.enabled = true;
-        }else
+            hookshotSound.setParameterByName("grip", 1);
+        }
+        else
             StartCoroutine(Desativar());
         
     }

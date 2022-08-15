@@ -42,6 +42,7 @@ public class SoundTrackScript : MonoBehaviour
         Music = menu.transform.GetComponent<SettingsMenu>().volumeMusic;
         Master = menu.transform.GetComponent<SettingsMenu>().volumeMaster;
         
+        
         CheckSoundtrackChange();
         gameSoundtrack.setVolume(Music);
         menuSoundtrack.setVolume(Music);

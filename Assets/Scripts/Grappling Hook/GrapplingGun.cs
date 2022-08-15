@@ -35,6 +35,9 @@ public class GrapplingGun : MonoBehaviour
     [HideInInspector] public bool haveGrapple = false;
     [HideInInspector] public string haveGrappleKey = "haveGrapple";
 
+    [Header("FMOD Sound:")]
+    public SettingsMenu sound;
+
 
     private void Start(){
 
@@ -103,6 +106,7 @@ public class GrapplingGun : MonoBehaviour
 
     public void Grapple() {
         hookshotSound = FMODUnity.RuntimeManager.CreateInstance("event:/Jogo Celestial/SFX/hookshotsound");
+        hookshotSound.setVolume(sound.volumeFX);
         hookshotSound.start();
         hookshotSound.release();
         if (onDistance){

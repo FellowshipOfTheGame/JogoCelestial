@@ -11,6 +11,10 @@ public class DamageSystem : MonoBehaviour
     private PlayerMovement plMove = null;
     private Animator anime = null;
     private AnimatorStateInfo stateInfo;
+    
+    [Header("FMOD Sound:")]
+    public GameObject menu;
+    public float FX;
 
     private void Start()
     {
@@ -41,7 +45,17 @@ public class DamageSystem : MonoBehaviour
             plMove._isDead = true;
             isDying = true;
             anime.Play("death");
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Jogo Celestial/SFX/death");
+            PlayOneShot("event:/Jogo Celestial/SFX/death");
         }
+    }
+
+    //funcao parab conseguir determinar o volume dos efeitos sonoros
+    public void PlayOneShot(string path){
+        FMOD.Studio.EventInstance soundFX = FMODUnity.RuntimeManager.CreateInstance(path);
+        menu = GameObject.FindWithTag ("Canvas");
+        FX = menu.transform.GetComponent<SettingsMenu>().volumeFX;
+        soundFX.setVolume(FX);
+        soundFX.start();
+        soundFX.release();
     }
 }

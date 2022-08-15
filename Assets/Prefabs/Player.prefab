@@ -89,6 +89,7 @@ MonoBehaviour:
   onDistance: 0
   haveGrapple: 0
   haveGrappleKey: haveGrapple
+  sound: {fileID: 0}
 --- !u!1 &8956342425051989963
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDied: 0
   isDying: 0
+  sound: {fileID: 7324492570533777709, guid: 023eed6904c536a4088bfa5d93990dcb, type: 3}
 --- !u!61 &8956342425999266156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -610,7 +612,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: -4.21, y: 0.38}
   m_AutoConfigureDistance: 0
-  m_Distance: 15.049691
+  m_Distance: 15.0497
   m_DampingRatio: 0
   m_Frequency: 1
 --- !u!114 &1154580445331760499

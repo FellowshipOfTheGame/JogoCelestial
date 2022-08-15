@@ -19,7 +19,8 @@ public class ContadorItens : MonoBehaviour
 
     void Update()
     {
-        int coinCounter = 0;
+        //old version
+        /*int coinCounter = 0;
 
          
         for(int j = 0; j < coinChildren.childCount; j++)
@@ -30,6 +31,9 @@ public class ContadorItens : MonoBehaviour
             }
         }
 
-        text.text =(coinCounter + "/" + coinChildren.childCount);
+        text.text =(coinCounter + "/" + coinChildren.childCount);*/
+
+        //new version
+        text.text = (GameManager.gm.coins + "/" + "10");
     }
 }

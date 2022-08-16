@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
     public void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        black.fillAmount = 0;
     }
     
     //apaga todos aspectos salvados no computador
@@ -98,9 +99,9 @@ public class GameOver : MonoBehaviour
     private void OnLevelWasLoaded()
     {
         if(SceneManager.GetActiveScene().buildIndex < startNivelBuildIndex || SceneManager.GetActiveScene().buildIndex > endNivelBuildIndex)
-            black.fillAmount = 1;
-        else 
             black.fillAmount = 0;
+        else 
+            black.fillAmount = 1;
     }
 
 
